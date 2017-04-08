@@ -12,7 +12,7 @@
 	<body class=body>
 		<table>
 			<tr>
-				<td class=pad-top>
+				<td class=pad-top colspan=2>
 					<div class="card mar-full">
 						<h1>The Sun King</h1>
 						<span class=float-right>
@@ -21,35 +21,6 @@
 							<button id="btnInit" class=button onclick=init()>New Game</button>
 						</span>
 					</div>
-				</td>
-			</tr><tr>
-				<td class=pad-top>
-					<div class="card mar-right">
-						<h2>Event</h2>
-						<p id="evtTxt">Event text goes here.</p>
-						<button id="btnEvt1" class=button onclick=handleBtnEvt1()>Option1</button>
-						<button id="btnEvt2" class=button onclick=handleBtnEvt2()>Option2</button>
-						<p>Option selected: <span id=spanBtnEvtSelected>N/A</span></p>
-					</div>
-				</td><td class=pad-top>
-					<div class="card mar-right">
-						<h2>Parliament</h2>
-						<table>
-							<tr>
-								<td>Nobles:&nbsp;</td>
-								<td><span id=loyaltyNobles>50</span>%&nbsp;Support</td>
-							</tr><tr>
-								<td>Clergy:&nbsp;</td>
-								<td><span id=loyaltyClergy>50</span>%&nbsp;Support</td>
-							</tr><tr>
-								<td>Commoners:&nbsp;</td>
-								<td><span id=loyaltyCommon>50</span>%&nbsp;Support</td>
-							</tr>
-						</table>
-					</div>
-				</td>
-			</tr><tr>
-				<td class=pad-top>
 					<div class="card mar-right">
 						<h2>Policies &amp; Actions</h2>
 						<ul>
@@ -75,7 +46,32 @@
 							</li>
 						</ul>
 					</div>
+				</td>
+			</tr><tr>
+				<td class=pad-top>
+					<div class="card mar-hor">
+						<h2>Event</h2>
+						<p id="evtTxt">Event text goes here.</p>
+						<button id="btnEvt1" class=button onclick=handleBtnEvt1()>Option1</button>
+						<button id="btnEvt2" class=button onclick=handleBtnEvt2()>Option2</button>
+						<p>Option selected: <span id=spanBtnEvtSelected>N/A</span></p>
+					</div>
 				</td><td class=pad-top>
+					<div class="card mar-right">
+						<h2>Parliament</h2>
+						<table>
+							<tr>
+								<td>Nobles:&nbsp;</td>
+								<td><span id=loyaltyNobles>50</span>%&nbsp;Support</td>
+							</tr><tr>
+								<td>Clergy:&nbsp;</td>
+								<td><span id=loyaltyClergy>50</span>%&nbsp;Support</td>
+							</tr><tr>
+								<td>Commoners:&nbsp;</td>
+								<td><span id=loyaltyCommon>50</span>%&nbsp;Support</td>
+							</tr>
+						</table>
+					</div>
 					<div class="card mar-right">
 						<h2>Accounting</h2>
 						<table>
