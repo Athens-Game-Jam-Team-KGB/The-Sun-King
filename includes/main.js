@@ -80,6 +80,11 @@ function init() {
 	treasuryCurrent  = 1000000;
 	treasuryFuture   = treasuryCurrent;
 	
+	// Reset UI
+	document.getElementById("slideTaxPercentNobles").value = 10;
+	document.getElementById("slideTaxPercentClergy").value = 10;
+	document.getElementById("slideTaxPercentCommon").value = 10;
+	
 	// Start the first turn
 	turn();
 }
