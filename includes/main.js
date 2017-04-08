@@ -89,12 +89,16 @@ function turn() {
 	populationClergy = 0.1  * populationTotal;   // Completely arbitrary;  based on the whole "10% tithe" thing.
 	populationCommon = populationTotal - populationNobles - populationClergy;  // https://en.wikipedia.org/wiki/French_nobility
 	
-	// Update other stuff
+	// Update economy
+	treasuryCurrent = treasuryFuture;
+	outlayEvt = 0;
+	receiptEvt = 0;
+	updateEcon();
+	
+	// Update misc
 	document.getElementById("btnTurn").style.display = "none";
 	document.getElementById("ulBtnEvt").style.display = "inline";
 	document.getElementById("liEvtOpt").style.display = "none";
-	treasuryCurrent = treasuryFuture;
-	updateEcon();
 	genIdEvt();
 	updateTxtEvt();
 	updateControls();
