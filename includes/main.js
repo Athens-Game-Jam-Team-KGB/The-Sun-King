@@ -18,7 +18,7 @@ var   nobles
 var   incomePersonal;
 var   loanCount;
 const loanInterestRate = 0.05;
-const loanValue = 10000000000;
+const loanValue = 100000000;
 var   netChange;
 var   receiptEvt;
 var   receiptTotal;
@@ -77,7 +77,7 @@ function init() {
 	taxPercentNobles = 0.10;
 	taxPercentClergy = 0.10;
 	taxPercentCommon = 0.10;
-	treasuryCurrent  = 100000000;
+	treasuryCurrent  = 1000000;
 	treasuryFuture   = treasuryCurrent;
 	
 	// Start the first turn
@@ -93,6 +93,7 @@ function turn() {
 	populationCommon = populationTotal - populationNobles - populationClergy;  // https://en.wikipedia.org/wiki/French_nobility
 	
 	// Update economy
+	updateEcon();
 	treasuryCurrent = treasuryFuture;
 	outlayEvt = 0;
 	receiptEvt = 0;
@@ -127,11 +128,11 @@ function updateControls() {
 	document.getElementById("spanTaxPercentCommon").innerHTML = Math.round(taxPercentCommon * 100);
 	
 	// Update receipts
-	document.getElementById("spanTaxAmtNobles").innerHTML = Math.round(taxAmtNobles * 100);
-	document.getElementById("spanTaxAmtClergy").innerHTML = Math.round(taxAmtClergy * 100);
-	document.getElementById("spanTaxAmtCommon").innerHTML = Math.round(taxAmtCommon * 100);
-	document.getElementById("spanTaxAmtTotal").innerHTML = "<b>" + Math.round(taxAmtTotal * 100) + "</b>";
-	document.getElementById("spanReceiptEvt").innerHTML = Math.round(receiptEvt * 100);
+	document.getElementById("spanTaxAmtNobles").innerHTML = Math.round(taxAmtNobles);
+	document.getElementById("spanTaxAmtClergy").innerHTML = Math.round(taxAmtClergy);
+	document.getElementById("spanTaxAmtCommon").innerHTML = Math.round(taxAmtCommon);
+	document.getElementById("spanTaxAmtTotal").innerHTML = "<b>" + Math.round(taxAmtTotal) + "</b>";
+	document.getElementById("spanReceiptEvt").innerHTML = Math.round(receiptEvt);
 	
 	// Update expenses
 	document.getElementById("spanOutlayCorrupt").innerHTML = Math.round(outlayCorrupt);
@@ -141,7 +142,7 @@ function updateControls() {
 	// Update totals
 	document.getElementById("spanReceiptTotal").innerHTML = Math.round(receiptTotal);
 	document.getElementById("spanOutlayTotal").innerHTML = Math.round(outlayTotal);
-	document.getElementById("spanNetChange").innerHTML = Math.round(netChange);
+	document.getElementById("spanNetChange").innerHTML = "<b>" + Math.round(netChange) + "</b>";
 	
 	// Update treasury
 	document.getElementById("spanTreasuryCurrent").innerHTML = Math.round(treasuryCurrent);
@@ -154,9 +155,9 @@ function updateEcon() {
 	taxAmtCommon = taxPercentCommon * incomeCommon * populationCommon;
 	taxAmtTotal = taxAmtNobles + taxAmtClergy + taxAmtCommon;
 	receiptTotal = taxAmtTotal + receiptEvt;
-	outlayCorrupt = corruptPercentNobles * (1 - approvalNobles) * taxAmtNobles * 100
-		      + corruptPercentClergy * (1 - approvalClergy) * taxAmtClergy * 100
-		      + corruptPercentCommon * (1 - approvalCommon) * taxAmtCommon * 100;
+	outlayCorrupt = corruptPercentNobles * (1 - approvalNobles) * taxAmtNobles * 200
+		      + corruptPercentClergy * (1 - approvalClergy) * taxAmtClergy * 200
+		      + corruptPercentCommon * (1 - approvalCommon) * taxAmtCommon * 200;
 	outlayInterest = loanCount * loanValue * loanInterestRate;
 	outlayTotal = outlayInterest + outlayEvt + outlayCorrupt;
 	netChange = receiptTotal - outlayTotal;
