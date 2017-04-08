@@ -52,6 +52,7 @@ function init() {
 	
 	// Economic variables
 	estatePopulation = Math.round(21000000 / 3); // We're pretending each state has the same population count in order to simulate some estates having more money than others
+	incomePersonal   = 337.5;  // We're going by season.  This is the average seasonal pay (in livres) of a skilled worker in France in the year 1700, per:  http://freepages.genealogy.rootsweb.ancestry.com/~unclefred/MONETARY.htm
 	netChange        = 0;
 	outlayCorrupt    = 0;
 	outlayEvt        = 0;
@@ -107,6 +108,11 @@ function updateControls() {
 	document.getElementById("spanTaxAmtClergy").innerHTML = Math.round(taxAmtClergy * 100);
 	document.getElementById("spanTaxAmtCommon").innerHTML = Math.round(taxAmtCommon * 100);
 	document.getElementById("spanTaxAmtTotal").innerHTML = "<b>" + Math.round(taxAmtTotal * 100) + "</b>";
+	
+	// Update expenses
+	document.getElementById("spanOutlayCorruption").innerHTML = Math.round(outlayCorruption);
+	document.getElementById("spanOutlayInterest").innerHTML = Math.round(outlayInterest);
+	document.getElementById("spanOutlayEvt").innerHTML = Math.round(outlayEvt);
 }
 
 function updateEcon() {
