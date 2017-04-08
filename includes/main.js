@@ -18,7 +18,7 @@ var   nobles
 var   incomePersonal;
 var   loanCount;
 const loanInterestRate = 0.05;
-const loanValue = 100000000;
+const loanAmt = 100000000;
 var   netChange;
 var   receiptEvt;
 var   receiptTotal;
@@ -158,7 +158,7 @@ function updateEcon() {
 	outlayCorrupt = corruptPercentNobles * (1 - approvalNobles) * taxAmtNobles * 2
 		      + corruptPercentClergy * (1 - approvalClergy) * taxAmtClergy * 2
 		      + corruptPercentCommon * (1 - approvalCommon) * taxAmtCommon * 2;
-	outlayInterest = loanCount * loanValue * loanInterestRate;
+	outlayInterest = loanCount * loanAmt * loanInterestRate;
 	outlayTotal = outlayInterest + outlayEvt + outlayCorrupt;
 	netChange = receiptTotal - outlayTotal;
 	treasuryFuture = treasuryCurrent + netChange;
