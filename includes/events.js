@@ -6,9 +6,9 @@ function genIdEvt() {
 }
 
 function updateTxtEvt() {
-		if(idEvt == 1){
+//		if(idEvt == 1){
 			document.getElementById("evtTxt").value = "Commoner rebel against you due to extreme weather hurting crop yield";
-		}
+//		}
 		handleBtnEvt1();
 		handleBtnEvt2();
 		updateControls();
