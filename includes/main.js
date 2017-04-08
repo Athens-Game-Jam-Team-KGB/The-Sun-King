@@ -8,6 +8,9 @@ const countEvt = 4;
 var   idEvt;
 var   idOp1;
 var   idOp2;
+var   txtSpanEvt;
+var   txtBtnEvt1;
+var   txtBtnEvt2;
 
 // Economic variables
 var   estatePopulation;
