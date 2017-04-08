@@ -73,9 +73,9 @@ function turn() {
 	document.getElementById("btnTurn").style.display = "none";
 	document.getElementById("ulBtnEvt").style.display = "inline";
 	document.getElementById("liEvtOpt").style.display = "none";
+	updateEcon();
 	genIdEvt();
 	updateTxtEvt();  // Already calls updateControls()
-	updateEcon();
 }
 
 function die() {
@@ -91,9 +91,9 @@ function updateControls() {
 	document.getElementById("spanApprovalNobles").innerHTML = Math.round(approvalNobles * 100);
 	document.getElementById("spanApprovalClergy").innerHTML = Math.round(approvalClergy * 100);
 	document.getElementById("spanApprovalCommon").innerHTML = Math.round(approvalCommon * 100);
-	document.getElementById("spanTaxPercentNobles").innerHTML = Math.round(taxPercentNobles * 100);
-	document.getElementById("spanTaxPercentClergy").innerHTML = Math.round(taxPercentClergy * 100);
-	document.getElementById("spanTaxPercentCommon").innerHTML = Math.round(taxPercentCommon * 100);
+	document.getElementById("spanTaxPercentNobles").innerHTML = "<b>" + Math.round(taxPercentNobles * 100) + "</b>";
+	document.getElementById("spanTaxPercentClergy").innerHTML = "<b>" + Math.round(taxPercentClergy * 100) + "</b>";
+	document.getElementById("spanTaxPercentCommon").innerHTML = "<b>" + Math.round(taxPercentCommon * 100) + "</b>";
 }
 
 function updateEcon() {
