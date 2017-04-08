@@ -87,13 +87,20 @@ function help() {
 }
 
 function updateControls() {
-	//Update Parliamentary
+	//Update parliament
 	document.getElementById("spanApprovalNobles").innerHTML = Math.round(approvalNobles * 100);
 	document.getElementById("spanApprovalClergy").innerHTML = Math.round(approvalClergy * 100);
 	document.getElementById("spanApprovalCommon").innerHTML = Math.round(approvalCommon * 100);
-	document.getElementById("spanTaxPercentNobles").innerHTML = "<b>" + Math.round(taxPercentNobles * 100) + "</b>";
-	document.getElementById("spanTaxPercentClergy").innerHTML = "<b>" + Math.round(taxPercentClergy * 100) + "</b>";
-	document.getElementById("spanTaxPercentCommon").innerHTML = "<b>" + Math.round(taxPercentCommon * 100) + "</b>";
+	
+	// Update tax sliders
+	document.getElementById("spanTaxPercentNobles").innerHTML = Math.round(taxPercentNobles * 100);
+	document.getElementById("spanTaxPercentClergy").innerHTML = Math.round(taxPercentClergy * 100);
+	document.getElementById("spanTaxPercentCommon").innerHTML = Math.round(taxPercentCommon * 100);
+	
+	// Update tax amounts
+	document.getElementById("spanTaxAmtNobles").innerHTML = "<b>" + Math.round(taxAmtNobles * 100) + "</b>";
+	document.getElementById("spanTaxAmtClergy").innerHTML = "<b>" + Math.round(taxAmtClergy * 100) + "</b>";
+	document.getElementById("spanTaxAmtCommon").innerHTML = "<b>" + Math.round(taxAmtCommon * 100) + "</b>";
 }
 
 function updateEcon() {
