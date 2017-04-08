@@ -1,6 +1,3 @@
-var approvalClergy;
-var approvalCommon;
-var approvalNoble;
 var countEvt = 2;
 var idEvt
 var idOp1;
@@ -25,7 +22,7 @@ function genIdEvt() {
 
 function updateTxtEvt() {
 		if(idEvt == 1){
-			document.getElementById("evtText").value = "Commoner rebel against you due to extreme weather hurting crop yield";
+			document.getElementById("evtTxt").value = "Commoner rebel against you due to extreme weather hurting crop yield";
 		}
 		handleBtnEvt1();
 		handleBtnEvt2();
@@ -98,4 +95,3 @@ function handleBtnEvt2() {
 		}
 	}
 }
-
