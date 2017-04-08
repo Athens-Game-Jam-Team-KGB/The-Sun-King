@@ -3,9 +3,9 @@ var   approvalClergy;
 var   approvalCommon;
 var   approvalNobles;
 
-/* Event variables
+// Event variables
 const countEvt = 1;
-var   idEvt;*/
+var   idEvt;
 
 // Economic variables
 var   estatePopulation;
