@@ -95,4 +95,10 @@ function updateEcon() {
 	taxAmountNobles = taxPercentNobles * personalIncome * estatePopulation;
 	taxAmountClergy = taxPercentClergy * personalIncome * estatePopulation;
 	taxAmountCommon = taxPercentCommon * personalIncome * estatePopulation;
+	taxAmountTotal = taxAmountNobles + taxAmountClergy + taxAmountCommon;
+	receiptTotal = taxAmountTotal;
+	outlayInterestTotal = loanCount * loanInterestRate;
+	outlayCorrupt = corruptPercentNobles * (1 - approvalNobles) * taxAmountNobles
+		      + corruptPercentClergy * (1 - approvalClergy) * taxAmountClergy
+		      + corruptPercentCommon * (1 - approvalCommon) * taxAmountCommon;
 }
