@@ -2,17 +2,17 @@
 // Slider handlers
 
 function handleSlideTaxPercentNobles() {
-	taxPercentNobles = Document.getElementById("slideTaxPercentNobles").value / 100;
+	taxPercentNobles = document.getElementById("slideTaxPercentNobles").value / 100;
 	updateControls();
 }
 
 function handleSlideTaxPercentClergy() {
-	taxPercentClergy = Document.getElementById("slideTaxPercentClergy").value / 100;
+	taxPercentClergy = document.getElementById("slideTaxPercentClergy").value / 100;
 	updateControls();
 }
 
 function handleSlideTaxPercentCommon() {
-	taxPercentCommon = Document.getElementById("slideTaxPercentCommon").value / 100;
+	taxPercentCommon = document.getElementById("slideTaxPercentCommon").value / 100;
 	updateControls();
 }
 
