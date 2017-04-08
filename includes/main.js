@@ -3,9 +3,12 @@ var   approvalClergy;
 var   approvalCommon;
 var   approvalNobles;
 
+
 // Event variables
-const countEvt = 1;
-var   idEvt;
+const countEvt = 2;
+var idEvt;
+var idOp1;
+var idOp2;
 
 // Economic variables
 var   estatePopulation;
@@ -33,9 +36,6 @@ function init() {
 	approvalClergy  = 50;
 	approvalCommon  = 50;
 	approvalNobles  = 50;
-	
-	// Event variables
-	idEvt = 0;
 	
 	// Economic variables
 	estatePopulation = 21000000 / 3; // We're pretending each state has the same population count in order to simulate some estates having more money than others
