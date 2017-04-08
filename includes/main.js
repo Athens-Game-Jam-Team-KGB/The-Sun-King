@@ -1,32 +1,40 @@
-var approvalClergy;
-var approvalCommon;
-var approvalNoble;
-var countEvt;
-var idEvt;
+var   approvalClergy;
+var   approvalCommon;
+var   approvalNoble;
+const countEvt = 0;
+var   idEvt;
 
 function init() {
-	idEvt = Math.round(Math.random() * countEvt);
+	approvalClergy = 0.5;
+	approvalCommon = 0.5;
+	approvalNoble  = 0.5;
+	turn();
 }
 
 function turn() {
-	
+	genIdEvt();
+	updateTxtEvt();
 }
 
-function updateEvt() {
+function genIdEvt() {
+	idEvt = Math.floor(Math.random() * countEvt);
+}
+
+function updateTxtEvt() {
 	switch(idEvt) {
 		default:
 		break;
 	}
 }
 
-function evtOpt1() {
+function handleBtnEvt1() {
 	switch(idEvt) {
 		default:
 		break;
 	}
 }
 
-function evtOpt2() {
+function handleBtnEvt2() {
 	switch(idEvt) {
 		default:
 		break;
