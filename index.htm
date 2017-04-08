@@ -47,7 +47,16 @@
 						<h2>Policies &amp; Actions</h2>
 						<ul>
 							<li>Policies go here.</li>
-							<li><button class=button onclick=takeLoan()>Take a Loan</button></li>
+							<li><h3>Taxes</h3></li>
+							<li><input id=sliderTaxNoble  type=range min=0 max=100 step=1 value=10 onchange=slideTaxNoble(this.value)></li>
+							<li><input id=sliderTaxClergy type=range min=0 max=100 step=1 value=10 onchange=slideTaxClergy(this.value)></li>
+							<li><input id=sliderTaxCommon type=range min=0 max=100 step=1 value=10 onchange=slideTaxCommon(this.value)></li>
+							<li><h3>Finance</h3></li>
+							<li>Current loans:  <span loansCurrent>0</span></li>
+							<li>
+								<button class=button onclick=takeLoan() >Take a Loan </button>
+								<button class=button onclick=repayLoan()>Repay a Loan</button>
+							</li>
 						</ul>
 					</div>
 				</td><td class=pad-top>
@@ -55,11 +64,44 @@
 						<h2>Accounting</h2>
 						<table>
 							<tr>
-								<td>Taxes:</td>
-								<td>£<span totalTax>0</span></td>
+								<td>Current&nbsp;Treasury:&nbsp;</td>
+								<td>£<span id=treasuryCurrent>0</span></td>
 							</tr><tr>
-								<td>Total:</td>
-								<td>£<span totalIncome>0</span></td>
+								<td colspan=2><h3><u>Taxes:</u></h3></td>
+							</tr><tr>
+								<td>Noble&nbsp;Tax:&nbsp;</td>
+								<td>£<span id=accountTaxNoble >0</span></td>
+							</tr><tr>
+								<td>Clergy&nbsp;Tax:&nbsp;</td>
+								<td>£<span id=accountTaxClergy>0</span></td>
+							</tr><tr>
+								<td>Commoner&nbsp;Tax:&nbsp;</td>
+								<td>£<span id=accountTaxCommon>0</span></td>
+							</tr><tr>
+								<td><b>Total&nbsp;Tax:&nbsp;</b></td>
+								<td><b>£<span id=accountTaxTotal >0</span></b></td>
+							</tr><tr>
+								<td colspan=2><h3><u>Interest:</u></h3></td>
+							</tr><tr>
+								<td><b>Per&nbsp;Loan:&nbsp;</b></td>
+								<td><b>£<span id=loanInterest>0</span></b></td>
+							</tr><tr>
+								<td><b>Total&nbsp;Interest:&nbsp;</b></td>
+								<td><b>£<span id=totalInterest>0</span></b></td>
+							</tr><tr>
+								<td><h3><u>Summary:</u></h3></td>
+							</tr><tr>
+								<td>Total&nbsp;Receipts:&nbsp;</td>
+								<td>£<span id=totalReceipts>0</span></td>
+							</tr><tr>
+								<td>Total&nbsp;Outlays:&nbsp;</td>
+								<td>£<span id=totalOutlays>0</span></td>
+							</tr><tr>
+								<td><b>Net&nbsp;Change:&nbsp;</b></td>
+								<td><b>£<span id=totalIncome>0</span></b></td>
+							</tr><tr>
+								<td>Future&nbsp;Treasury:&nbsp;</td>
+								<td>£<span id=treasuryFuture>0</span></td>
 							</tr>
 						</table>
 					</div>
