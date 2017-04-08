@@ -60,6 +60,17 @@ function init() {
 }
 
 function turn() {
+	// Update events
 	genIdEvt();
 	updateTxtEvt();
+	
+	// Update economy
+}
+
+function die() {
+	
+}
+
+function help() {
+	
 }
