@@ -155,9 +155,9 @@ function updateEcon() {
 	taxAmtCommon = taxPercentCommon * incomeCommon * populationCommon;
 	taxAmtTotal = taxAmtNobles + taxAmtClergy + taxAmtCommon;
 	receiptTotal = taxAmtTotal + receiptEvt;
-	outlayCorrupt = corruptPercentNobles * (1 - approvalNobles) * taxAmtNobles * 200
-		      + corruptPercentClergy * (1 - approvalClergy) * taxAmtClergy * 200
-		      + corruptPercentCommon * (1 - approvalCommon) * taxAmtCommon * 200;
+	outlayCorrupt = corruptPercentNobles * (1 - approvalNobles) * taxAmtNobles * 2
+		      + corruptPercentClergy * (1 - approvalClergy) * taxAmtClergy * 2
+		      + corruptPercentCommon * (1 - approvalCommon) * taxAmtCommon * 2;
 	outlayInterest = loanCount * loanValue * loanInterestRate;
 	outlayTotal = outlayInterest + outlayEvt + outlayCorrupt;
 	netChange = receiptTotal - outlayTotal;
