@@ -77,8 +77,8 @@ function init() {
 	taxPercentNobles = 0.10;
 	taxPercentClergy = 0.10;
 	taxPercentCommon = 0.10;
-	treasuryCurrent  = 100000;
-	treasuryFuture   = 0;
+	treasuryCurrent  = 100000000;
+	treasuryFuture   = treasuryCurrent;
 	
 	// Start the first turn
 	turn();
