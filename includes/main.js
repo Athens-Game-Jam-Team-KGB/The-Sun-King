@@ -93,6 +93,7 @@ function turn() {
 	document.getElementById("btnTurn").style.display = "none";
 	document.getElementById("ulBtnEvt").style.display = "inline";
 	document.getElementById("liEvtOpt").style.display = "none";
+	treasuryCurrent = treasuryFuture;
 	updateEcon();
 	genIdEvt();
 	updateTxtEvt();
@@ -118,16 +119,26 @@ function updateControls() {
 	document.getElementById("spanTaxPercentClergy").innerHTML = Math.round(taxPercentClergy * 100);
 	document.getElementById("spanTaxPercentCommon").innerHTML = Math.round(taxPercentCommon * 100);
 	
-	// Update tax amounts
+	// Update receipts
 	document.getElementById("spanTaxAmtNobles").innerHTML = Math.round(taxAmtNobles * 100);
 	document.getElementById("spanTaxAmtClergy").innerHTML = Math.round(taxAmtClergy * 100);
 	document.getElementById("spanTaxAmtCommon").innerHTML = Math.round(taxAmtCommon * 100);
 	document.getElementById("spanTaxAmtTotal").innerHTML = "<b>" + Math.round(taxAmtTotal * 100) + "</b>";
+	document.getElementById("spanReceiptEvt").innerHTML = Math.round(receiptEvt * 100);
 	
 	// Update expenses
 	document.getElementById("spanOutlayCorrupt").innerHTML = Math.round(outlayCorrupt);
 	document.getElementById("spanOutlayInterest").innerHTML = Math.round(outlayInterest);
 	document.getElementById("spanOutlayEvt").innerHTML = Math.round(outlayEvt);
+	
+	// Update totals
+	document.getElementById("spanReceiptTotal").innerHTML = Math.round(receiptTotal);
+	document.getElementById("spanOutlayTotal").innerHTML = Math.round(outlayTotal);
+	document.getElementById("spanNetChange").innerHTML = Math.round(netChange);
+	
+	// Update treasury
+	document.getElementById("spanTreasuryCurrent").innerHTML = Math.round(treasuryCurrent);
+	document.getElementById("spanTreasuryFuture").innerHTML = Math.round(treasuryFuture);
 }
 
 function updateEcon() {
@@ -135,9 +146,12 @@ function updateEcon() {
 	taxAmtClergy = taxPercentClergy * incomeClergy * populationClergy;
 	taxAmtCommon = taxPercentCommon * incomeCommon * populationCommon;
 	taxAmtTotal = taxAmtNobles + taxAmtClergy + taxAmtCommon;
-	receiptTotal = taxAmtTotal;
-	outlayInterestTotal = loanCount * loanValue * loanInterestRate;
+	receiptTotal = taxAmtTotal + receiptEvt;
 	outlayCorrupt = corruptPercentNobles * (1 - approvalNobles) * taxAmtNobles * 100
 		      + corruptPercentClergy * (1 - approvalClergy) * taxAmtClergy * 100
 		      + corruptPercentCommon * (1 - approvalCommon) * taxAmtCommon * 100;
+	outlayInterest = loanCount * loanValue * loanInterestRate;
+	outlayTotal = outlayInterest + outlayEvt + outlayCorrupt;
+	netChange = receiptTotal - outlayTotal;
+	treasuryFuture = treasuryCurrent + netChange;
 }
