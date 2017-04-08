@@ -4,7 +4,7 @@ var   approvalCommon;
 var   approvalNobles;
 
 // Event variables
-const countEvt = 4;
+const countEvt = 6;
 var   idEvt;
 var   idOp1;
 var   idOp2;
@@ -124,7 +124,7 @@ function updateEcon() {
 	taxAmtTotal = taxAmtNobles + taxAmtClergy + taxAmtCommon;
 	receiptTotal = taxAmtTotal;
 	outlayInterestTotal = loanCount * loanValue * loanInterestRate;
-	outlayCorrupt = corruptPercentNobles * (1 - approvalNobles) * taxAmtNobles
-		      + corruptPercentClergy * (1 - approvalClergy) * taxAmtClergy
-		      + corruptPercentCommon * (1 - approvalCommon) * taxAmtCommon;
+	outlayCorrupt = corruptPercentNobles * (1 - approvalNobles) * taxAmtNobles * 10
+		      + corruptPercentClergy * (1 - approvalClergy) * taxAmtClergy * 10
+		      + corruptPercentCommon * (1 - approvalCommon) * taxAmtCommon * 10;
 }
