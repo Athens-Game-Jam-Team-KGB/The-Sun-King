@@ -11,13 +11,15 @@ var   idOp2;
 
 // Economic variables
 var   estatePopulation;
+const loanInterestRate = 0.05;
+const loanValue        = 0;
 var   netChange;
 var   personalIncome;
 var   receiptTotal;
-var   taxAmountNobles;
-var   taxAmountClergy;
-var   taxAmountCommon;
-var   taxAmountTotal;
+var   taxAmtNobles;
+var   taxAmtClergy;
+var   taxAmtCommon;
+var   taxAmtTotal;
 var   taxPercentNobles;
 var   taxPercentClergy;
 var   taxPercentCommon;
@@ -27,7 +29,6 @@ const corruptPercentNobles = 1.0;
 const corruptPercentClergy = 0.7;
 const corruptPercentCommon = 0.3;
 var   outlayCorrupt;
-const outlayInterestPerLoan = 0;
 var   outlayInterestTotal;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -35,9 +36,9 @@ var   outlayInterestTotal;
 
 function init() {
 	// Parliamentary variables
-	approvalClergy  = .50;
-	approvalCommon  = .50;
-	approvalNobles  = .50;
+	approvalClergy  = 0.50;
+	approvalCommon  = 0.50;
+	approvalNobles  = 0.50;
 	
 	// Event variables
 	idEvt = 0;
@@ -45,17 +46,17 @@ function init() {
 	idOp2 = 0;
 	
 	// Economic variables
-	estatePopulation = 21000000 / 3; // We're pretending each state has the same population count in order to simulate some estates having more money than others
+	estatePopulation = Math.round(21000000 / 3); // We're pretending each state has the same population count in order to simulate some estates having more money than others
 	netChange        = 0;
 	outlayCorrupt    = 0;
 	outlayEvt        = 0;
 	outlayInterest   = 0;
 	outlayTotal      = 0;
 	receiptTotal     = 0;
-	taxAmountNobles  = 0;
-	taxAmountClergy  = 0;
-	taxAmountCommon  = 0;
-	taxAmountTotal   = 0;
+	taxAmtNobles     = 0;
+	taxAmtClergy     = 0;
+	taxAmtCommon     = 0;
+	taxAmtTotal      = 0;
 	taxPercentNobles = 0.10;
 	taxPercentClergy = 0.10;
 	taxPercentCommon = 0.10;
@@ -92,13 +93,13 @@ function updateControls() {
 }
 
 function updateEcon() {
-	taxAmountNobles = taxPercentNobles * personalIncome * estatePopulation;
-	taxAmountClergy = taxPercentClergy * personalIncome * estatePopulation;
-	taxAmountCommon = taxPercentCommon * personalIncome * estatePopulation;
-	taxAmountTotal = taxAmountNobles + taxAmountClergy + taxAmountCommon;
-	receiptTotal = taxAmountTotal;
-	outlayInterestTotal = loanCount * loanInterestRate;
-	outlayCorrupt = corruptPercentNobles * (1 - approvalNobles) * taxAmountNobles
-		      + corruptPercentClergy * (1 - approvalClergy) * taxAmountClergy
-		      + corruptPercentCommon * (1 - approvalCommon) * taxAmountCommon;
+	taxAmtNobles = taxPercentNobles * personalIncome * estatePopulation;
+	taxAmtClergy = taxPercentClergy * personalIncome * estatePopulation;
+	taxAmtCommon = taxPercentCommon * personalIncome * estatePopulation;
+	taxAmtTotal = taxAmtNobles + taxAmtClergy + taxAmtCommon;
+	receiptTotal = taxAmtTotal;
+	outlayInterestTotal = loanCount * loanValue * loanInterestRate;
+	outlayCorrupt = corruptPercentNobles * (1 - approvalNobles) * taxAmtNobles
+		      + corruptPercentClergy * (1 - approvalClergy) * taxAmtClergy
+		      + corruptPercentCommon * (1 - approvalCommon) * taxAmtCommon;
 }
