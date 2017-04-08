@@ -12,6 +12,7 @@ var   idOp2;
 // Economic variables
 var   estatePopulation;
 var   netChange;
+var   personalIncome;
 var   taxAmountNobles;
 var   taxAmountClergy;
 var   taxAmountCommon;
