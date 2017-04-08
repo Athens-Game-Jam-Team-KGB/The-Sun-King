@@ -26,5 +26,5 @@ License
 --------------------------------------------------------------------------------
 + All code is under the LGPL3 (see "/License.txt").
 + All text is under CC-BY-SA-4 (see "https://creativecommons.org/licenses/by-sa/4.0/legalcode").
-+ All art is too old to be copyrighted.
++ All art originates from Wikipedia, and is either too old to be copyrighted, or under CC-BY-SA.
 + All music is too old to be copyrighted.
