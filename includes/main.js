@@ -11,10 +11,11 @@ var   idOp2;
 
 // Economic variables
 var   estatePopulation;
+var   incomePersonal;
+var   loanCount;
 const loanInterestRate = 0.05;
 const loanValue        = 0;
 var   netChange;
-var   personalIncome;
 var   receiptTotal;
 var   taxAmtNobles;
 var   taxAmtClergy;
@@ -104,9 +105,9 @@ function updateControls() {
 }
 
 function updateEcon() {
-	taxAmtNobles = taxPercentNobles * personalIncome * estatePopulation;
-	taxAmtClergy = taxPercentClergy * personalIncome * estatePopulation;
-	taxAmtCommon = taxPercentCommon * personalIncome * estatePopulation;
+	taxAmtNobles = taxPercentNobles * incomePersonal * estatePopulation;
+	taxAmtClergy = taxPercentClergy * incomePersonal * estatePopulation;
+	taxAmtCommon = taxPercentCommon * incomePersonal * estatePopulation;
 	taxAmtTotal = taxAmtNobles + taxAmtClergy + taxAmtCommon;
 	receiptTotal = taxAmtTotal;
 	outlayInterestTotal = loanCount * loanValue * loanInterestRate;
