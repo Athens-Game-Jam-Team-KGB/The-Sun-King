@@ -29,6 +29,7 @@ const corruptPercentNobles = 1.0;
 const corruptPercentClergy = 0.7;
 const corruptPercentCommon = 0.3;
 var   outlayCorrupt;
+var   outlayEvt;
 var   outlayInterestTotal;
 
 ////////////////////////////////////////////////////////////////////////////////
