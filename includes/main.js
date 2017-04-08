@@ -110,7 +110,7 @@ function updateControls() {
 	document.getElementById("spanTaxAmtTotal").innerHTML = "<b>" + Math.round(taxAmtTotal * 100) + "</b>";
 	
 	// Update expenses
-	document.getElementById("spanOutlayCorruption").innerHTML = Math.round(outlayCorruption);
+	document.getElementById("spanOutlayCorrupt").innerHTML = Math.round(outlayCorrupt);
 	document.getElementById("spanOutlayInterest").innerHTML = Math.round(outlayInterest);
 	document.getElementById("spanOutlayEvt").innerHTML = Math.round(outlayEvt);
 }
