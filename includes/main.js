@@ -13,9 +13,11 @@ var   idOp2;
 var   estatePopulation;
 var   netChange;
 var   personalIncome;
+var   receiptTotal;
 var   taxAmountNobles;
 var   taxAmountClergy;
 var   taxAmountCommon;
+var   taxAmountTotal;
 var   taxPercentNobles;
 var   taxPercentClergy;
 var   taxPercentCommon;
@@ -53,10 +55,10 @@ function init() {
 	taxAmountNobles  = 0;
 	taxAmountClergy  = 0;
 	taxAmountCommon  = 0;
+	taxAmountTotal   = 0;
 	taxPercentNobles = 0.10;
 	taxPercentClergy = 0.10;
 	taxPercentCommon = 0.10;
-	taxAmountTotal   = 0;
 	treasuryCurrent  = 100000;
 	treasuryFuture   = 0;
 	
