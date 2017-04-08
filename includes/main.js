@@ -13,11 +13,12 @@ var   txtBtnEvt2;
 var   txtSpanEvt;
 
 // Economic variables
-var   estatePopulation;
+var   populationTotal;
+var   nobles
 var   incomePersonal;
 var   loanCount;
 const loanInterestRate = 0.05;
-const loanValue        = 0;
+const loanValue = 0;
 var   netChange;
 var   receiptEvt;
 var   receiptTotal;
@@ -52,8 +53,13 @@ function init() {
 	idOp2 = 0;
 	
 	// Economic variables
-	estatePopulation = Math.round(21000000 / 3); // We're pretending each state has the same population count in order to simulate some estates having more money than others
-	incomePersonal   = 337.5;  // We're going by season.  This is the average seasonal pay (in livres) of a skilled worker in France in the year 1700, per:  http://freepages.genealogy.rootsweb.ancestry.com/~unclefred/MONETARY.htm
+	populationTotal  = 21000000; // https://en.wikipedia.org/wiki/List_of_countries_by_population_in_1700
+	populationNobles = 0;
+	populationClergy = 0;
+	populationCommon = 0;
+	incomeNobles     = 3000; // This is the average seasonal income (in livres) of a governer in France in the year 1700, per:  http://freepages.genealogy.rootsweb.ancestry.com/~unclefred/MONETARY.htm
+	incomeClergy     = 600;  // This is the average seasonal income (in livres) of a mid-ranking official in France in the year 1700, per:  http://freepages.genealogy.rootsweb.ancestry.com/~unclefred/MONETARY.htm
+	incomeCommon     = 225;  // This is the average seasonal income (in livres) of a half-skilled worker in France in the year 1700, per:  http://freepages.genealogy.rootsweb.ancestry.com/~unclefred/MONETARY.htm
 	netChange        = 0;
 	outlayCorrupt    = 0;
 	outlayEvt        = 0;
@@ -76,7 +82,14 @@ function init() {
 }
 
 function turn() {
-	// Update events
+	// Update demographics
+	populationGrowth = 1.0019; // Between 1600 and 1801, per https://en.wikipedia.org/wiki/Demographics_of_France#Historical_population_figures
+	populationTotal *= populationGrowth; // https://en.wikipedia.org/wiki/List_of_countries_by_population_in_1700
+	populationNobles = 0.01 * populationTotal;  // https://en.wikipedia.org/wiki/French_nobility
+	populationClergy = 0.1  * populationTotal;   // Completely arbitrary;  based on the whole "10% tithe" thing.
+	populationCommon = populationTotal - populationNobles - populationClergy;  // https://en.wikipedia.org/wiki/French_nobility
+	
+	// Update other stuff
 	document.getElementById("btnTurn").style.display = "none";
 	document.getElementById("ulBtnEvt").style.display = "inline";
 	document.getElementById("liEvtOpt").style.display = "none";
@@ -118,9 +131,9 @@ function updateControls() {
 }
 
 function updateEcon() {
-	taxAmtNobles = taxPercentNobles * incomePersonal * estatePopulation;
-	taxAmtClergy = taxPercentClergy * incomePersonal * estatePopulation;
-	taxAmtCommon = taxPercentCommon * incomePersonal * estatePopulation;
+	taxAmtNobles = taxPercentNobles * incomeNobles * populationNobles;
+	taxAmtClergy = taxPercentClergy * incomeClergy * populationClergy;
+	taxAmtCommon = taxPercentCommon * incomeCommon * populationCommon;
 	taxAmtTotal = taxAmtNobles + taxAmtClergy + taxAmtCommon;
 	receiptTotal = taxAmtTotal;
 	outlayInterestTotal = loanCount * loanValue * loanInterestRate;
