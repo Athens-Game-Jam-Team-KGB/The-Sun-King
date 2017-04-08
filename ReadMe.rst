@@ -28,8 +28,9 @@ Licenses
 + All text is under CC-BY-SA-4 (see "https://creativecommons.org/licenses/by-sa/4.0/legalcode").
 + All music is too old to be copyrighted.
 + The art copyrights and sources are as follows:
-
-    + resources/gameover.png (No Copyright) (https://commons.wikimedia.org/wiki/File:Hinrichtung_Ludwig_des_XVI.png)
-    + resourecs/nobles.png (CC-BY-SA-3) (source:  https://commons.wikimedia.org/wiki/File:Royal_Monogram_of_King_Louis_XIV_of_France.svg)
+    
+    + resources/background.jpg (No Copyright) (https://commons.wikimedia.org/wiki/File:Claude-Joseph_Verne_-_L'entrée_du_port_de_Marseille_%281754%29.jpg)
     + resources/clergy.png (CC-BY-SA-4) (self-made)
     + resources/common.png (CC-BY-SA-3) (https://commons.wikimedia.org/wiki/File:Tricolour_Cockade.svg)
+    + resources/gameover.png (No Copyright) (https://commons.wikimedia.org/wiki/File:Hinrichtung_Ludwig_des_XVI.png)
+    + resourecs/nobles.png (CC-BY-SA-3) (source:  https://commons.wikimedia.org/wiki/File:Royal_Monogram_of_King_Louis_XIV_of_France.svg)
