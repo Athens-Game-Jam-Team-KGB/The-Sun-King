@@ -22,9 +22,14 @@ Authors
 + Robert Maerz
 + Songpei Yang
 
-License
+Licenses
 --------------------------------------------------------------------------------
 + All code is under the LGPL3 (see "/License.txt").
 + All text is under CC-BY-SA-4 (see "https://creativecommons.org/licenses/by-sa/4.0/legalcode").
-+ All art originates from Wikipedia, and is either too old to be copyrighted, or under CC-BY-SA.
 + All music is too old to be copyrighted.
++ The art copyrights and sources are as follows:
+
+    + resources/gameover.png (No Copyright) (https://commons.wikimedia.org/wiki/File:Hinrichtung_Ludwig_des_XVI.png)
+    + resourecs/nobles.png (CC-BY-SA-3) (source:  https://commons.wikimedia.org/wiki/File:Royal_Monogram_of_King_Louis_XIV_of_France.svg)
+    + resources/clergy.png (CC-BY-SA-4) (self-made)
+    + resources/common.png (CC-BY-SA-3) (https://commons.wikimedia.org/wiki/File:Tricolour_Cockade.svg)
