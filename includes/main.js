@@ -36,6 +36,11 @@ function init() {
 	approvalCommon  = .50;
 	approvalNobles  = .50;
 	
+	// Event variables
+	idEvt = 0;
+	idOp1 = 0;
+	idOp2 = 0;
+	
 	// Economic variables
 	estatePopulation = 21000000 / 3; // We're pretending each state has the same population count in order to simulate some estates having more money than others
 	netChange        = 0;
