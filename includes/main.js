@@ -3,9 +3,9 @@ var   approvalClergy;
 var   approvalCommon;
 var   approvalNobles;
 
-// Event variables
+/* Event variables
 const countEvt = 1;
-var   idEvt;
+var   idEvt;*/
 
 // Economic variables
 var   estatePopulation;
@@ -30,9 +30,9 @@ var   outlayInterestTotal;
 
 function init() {
 	// Parliamentary variables
-	approvalClergy  = 0.5;
-	approvalCommon  = 0.5;
-	approvalNobles  = 0.5;
+	approvalClergy  = 50;
+	approvalCommon  = 50;
+	approvalNobles  = 50;
 	
 	// Event variables
 	idEvt = 0;
@@ -64,8 +64,7 @@ function turn() {
 	genIdEvt();
 	updateTxtEvt();
 	
-	// Update HTML
-	updateControls();
+	// Update economy
 }
 
 function die() {
@@ -77,5 +76,8 @@ function help() {
 }
 
 function updateControls() {
-	
+	//Update Parliamentary
+	document.getElementById("spanApprovalClergy").innerHTML = approvalClergy;
+	document.getElementById("spanApprovalCommon").innerHTML = approvalCommon; 
+	document.getElementById("spanApprovalNobles").innerHTML = approvalNobles; 	
 }
