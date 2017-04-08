@@ -1,8 +1,8 @@
-var idEvt;
-var countEvt;
 var approvalClergy;
-var approvalNoble;
 var approvalCommon;
+var approvalNoble;
+var countEvt;
+var idEvt;
 
 function init() {
 	idEvt = Math.round(Math.random() * countEvt);
