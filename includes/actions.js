@@ -23,9 +23,15 @@ function handleSlideTaxPercentCommon() {
 // Loans
 
 function loanTake() {
+	treasuryCurrent+= loanAmt;
+	loanCount++;
+	updateEconomy();
 	updateControls();
 }
 
 function loanRepay() {
+	treasuryCurrent-= loanAmt;
+	loanCount--;
+	updateEconomy();
 	updateControls();
 }
