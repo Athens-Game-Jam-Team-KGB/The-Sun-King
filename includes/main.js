@@ -1,7 +1,7 @@
 var   approvalClergy;
 var   approvalCommon;
 var   approvalNoble;
-const countEvt = 0;
+const countEvt = 1;
 var   idEvt;
 
 function init() {
@@ -17,7 +17,8 @@ function turn() {
 }
 
 function genIdEvt() {
-	idEvt = Math.floor(Math.random() * countEvt);
+	while(idEvt < countEvt)
+		idEvt = Math.floor(Math.random() * countEvt);
 }
 
 function updateTxtEvt() {
