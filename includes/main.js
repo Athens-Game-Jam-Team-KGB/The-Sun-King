@@ -18,7 +18,7 @@ var   nobles
 var   incomePersonal;
 var   loanCount;
 const loanInterestRate = 0.05;
-const loanValue = 0;
+const loanValue = 10000000000;
 var   netChange;
 var   receiptEvt;
 var   receiptTotal;
@@ -52,11 +52,14 @@ function init() {
 	idOp1 = 0;
 	idOp2 = 0;
 	
-	// Economic variables
+	// Demographic variables
 	populationTotal  = 21000000; // https://en.wikipedia.org/wiki/List_of_countries_by_population_in_1700
 	populationNobles = 0;
 	populationClergy = 0;
 	populationCommon = 0;
+	
+	// Economic variables
+	loanCount        = 0;
 	incomeNobles     = 3000; // This is the average seasonal income (in livres) of a governer in France in the year 1700, per:  http://freepages.genealogy.rootsweb.ancestry.com/~unclefred/MONETARY.htm
 	incomeClergy     = 600;  // This is the average seasonal income (in livres) of a mid-ranking official in France in the year 1700, per:  http://freepages.genealogy.rootsweb.ancestry.com/~unclefred/MONETARY.htm
 	incomeCommon     = 225;  // This is the average seasonal income (in livres) of a half-skilled worker in France in the year 1700, per:  http://freepages.genealogy.rootsweb.ancestry.com/~unclefred/MONETARY.htm
