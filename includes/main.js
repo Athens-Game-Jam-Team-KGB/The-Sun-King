@@ -19,6 +19,7 @@ var   loanCount;
 const loanInterestRate = 0.05;
 const loanValue        = 0;
 var   netChange;
+var   receiptEvt;
 var   receiptTotal;
 var   taxAmtNobles;
 var   taxAmtClergy;
@@ -58,6 +59,7 @@ function init() {
 	outlayEvt        = 0;
 	outlayInterest   = 0;
 	outlayTotal      = 0;
+	receiptEvt       = 0;
 	receiptTotal     = 0;
 	taxAmtNobles     = 0;
 	taxAmtClergy     = 0;
