@@ -3,7 +3,6 @@ var   approvalClergy;
 var   approvalCommon;
 var   approvalNobles;
 
-
 // Event variables
 const countEvt = 2;
 var idEvt;
@@ -62,9 +61,7 @@ function init() {
 function turn() {
 	// Update events
 	genIdEvt();
-	updateTxtEvt();
-	
-	// Update economy
+	updateTxtEvt();  // Already calls updateControls()
 }
 
 function die() {
@@ -77,7 +74,10 @@ function help() {
 
 function updateControls() {
 	//Update Parliamentary
+	document.getElementById("spanApprovalNobles").innerHTML = approvalNobles;
 	document.getElementById("spanApprovalClergy").innerHTML = approvalClergy;
-	document.getElementById("spanApprovalCommon").innerHTML = approvalCommon; 
-	document.getElementById("spanApprovalNobles").innerHTML = approvalNobles; 	
+	document.getElementById("spanApprovalCommon").innerHTML = approvalCommon;
+	document.getElementById("spanTaxPercentNobles").innerHTML = taxPercentNobles;
+	document.getElementById("spanTaxPercentClergy").innerHTML = taxPercentClergy;
+	document.getElementById("spanTaxPercentCommon").innerHTML = taxPercentCommon;
 }
