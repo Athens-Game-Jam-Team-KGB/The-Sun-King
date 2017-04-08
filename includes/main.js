@@ -5,9 +5,9 @@ var   approvalNobles;
 
 // Event variables
 const countEvt = 2;
-var idEvt;
-var idOp1;
-var idOp2;
+var   idEvt;
+var   idOp1;
+var   idOp2;
 
 // Economic variables
 var   estatePopulation;
