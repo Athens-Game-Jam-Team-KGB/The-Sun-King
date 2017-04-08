@@ -64,7 +64,8 @@ function turn() {
 	genIdEvt();
 	updateTxtEvt();
 	
-	// Update economy
+	// Update HTML
+	updateControls();
 }
 
 function die() {
@@ -72,5 +73,9 @@ function die() {
 }
 
 function help() {
+	
+}
+
+function updateControls() {
 	
 }
