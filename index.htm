@@ -37,13 +37,13 @@
 						<table>
 							<tr>
 								<td>Nobles:&nbsp;</td>
-								<td><span id=loyaltyNobles>50%</span> Support</td>
+								<td><span id=loyaltyNobles>50</span>%&nbsp;Support</td>
 							</tr><tr>
 								<td>Clergy:&nbsp;</td>
-								<td><span id=loyaltyClergy>50%</span> Support</td>
+								<td><span id=loyaltyClergy>50</span>%&nbsp;Support</td>
 							</tr><tr>
 								<td>Commoners:&nbsp;</td>
-								<td><span id=loyaltyCommon>50%</span> Support</td>
+								<td><span id=loyaltyCommon>50</span>%&nbsp;Support</td>
 							</tr>
 						</table>
 					</div>
@@ -55,9 +55,18 @@
 						<ul>
 							<li>Policies go here.</li>
 							<li><h3>Taxes</h3></li>
-							<li><input id=slideTaxPercentNobles type=range min=0 max=100 step=1 value=10 onchange=handleSlideTaxPercentNobles(this.value)></li>
-							<li><input id=slideTaxPercentClergy type=range min=0 max=100 step=1 value=10 onchange=handleSlideTaxPercentClergy(this.value)></li>
-							<li><input id=slideTaxPercentCommon type=range min=0 max=100 step=1 value=10 onchange=handleSlideTaxPercentCommon(this.value)></li>
+							<li>
+								<input id=slideTaxPercentNobles type=range min=0 max=100 step=1 value=10 onchange=handleSlideTaxPercentNobles(this.value)>
+								&nbsp;<span id=spanTaxPercentNobles>10</span>%
+							</li>
+							<li>
+								<input id=slideTaxPercentClergy type=range min=0 max=100 step=1 value=10 onchange=handleSlideTaxPercentClergy(this.value)>
+								&nbsp;<span id=spanTaxPercentClergy>10</span>%
+							</li>
+							<li>
+								<input id=slideTaxPercentCommon type=range min=0 max=100 step=1 value=10 onchange=handleSlideTaxPercentCommon(this.value)>
+								&nbsp;<span id=spanTaxPercentCommon>10</span>%
+							</li>
 							<li><h3>Finance</h3></li>
 							<li>Current loans:  <span loansCurrent>0</span></li>
 							<li>
