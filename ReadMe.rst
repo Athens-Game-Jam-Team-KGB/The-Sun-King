@@ -3,8 +3,8 @@ TBD
 
 Usage
 ================================================================================
-| After downloading and extracting the repository, open /index.htm in an HTML5-
-  compatible browser.
+| After downloading and extracting the repository, open ``/index.htm`` in an
+  HTML5-compatible browser.
 
 About
 ================================================================================
