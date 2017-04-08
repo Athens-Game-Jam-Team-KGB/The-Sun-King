@@ -8,9 +8,9 @@ const countEvt = 4;
 var   idEvt;
 var   idOp1;
 var   idOp2;
-var   txtSpanEvt;
 var   txtBtnEvt1;
 var   txtBtnEvt2;
+var   txtSpanEvt;
 
 // Economic variables
 var   estatePopulation;
@@ -79,7 +79,8 @@ function turn() {
 	document.getElementById("liEvtOpt").style.display = "none";
 	updateEcon();
 	genIdEvt();
-	updateTxtEvt();  // Already calls updateControls()
+	updateTxtEvt();
+	updateControls();
 }
 
 function die() {
