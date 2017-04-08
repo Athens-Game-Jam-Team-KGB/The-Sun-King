@@ -11,11 +11,11 @@ About
 
 Description
 --------------------------------------------------------------------------------
-| Our entry for Athens Game Jam 2017
+| Our entry for Athens Game Jam 2017.  The topic was "bureaucracy".
 
 Authors
 --------------------------------------------------------------------------------
 + Miles B Huff
 + Songpei Yang
 + Arjun Kaycee
-+ Robert 
++ Robert ?????
