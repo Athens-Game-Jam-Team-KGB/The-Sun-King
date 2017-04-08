@@ -20,8 +20,8 @@
 					<div class="card mar-right">
 						<h2>Event</h2>
 						<p id="evtTxt">Event text goes here.</p>
-						<button id="evtOpt1" class=button onclick=realistic()>Option1</button>
-						<button id="evtOpt2" class=button onclick=realistic()>Option2</button>
+						<button id="evtOpt1" class=button onclick=evtOpt1()>Option1</button>
+						<button id="evtOpt2" class=button onclick=evtOpt2()>Option2</button>
 						<p>Option selected: <span id=evtSelected>N/A</span></p>
 					</div>
 				</td><td class=pad-top>
@@ -44,15 +44,24 @@
 			</tr><tr>
 				<td class=pad-top>
 					<div class="card mar-right">
-						<h2>Policies</h2>
+						<h2>Policies &amp; Actions</h2>
 						<ul>
 							<li>Policies go here.</li>
+							<li><button class=button onclick=takeLoan()>Take a Loan</button></li>
 						</ul>
 					</div>
 				</td><td class=pad-top>
 					<div class="card mar-right">
 						<h2>Accounting</h2>
-						<p>Spreadsheet stuff goes here.</p>
+						<table>
+							<tr>
+								<td>Taxes:</td>
+								<td>£<span totalTax>0</span></td>
+							</tr><tr>
+								<td>Total:</td>
+								<td>£<span totalIncome>0</span></td>
+							</tr>
+						</table>
 					</div>
 				</td>
 			</tr>
