@@ -77,7 +77,7 @@ function updateControls() {
 	document.getElementById("spanApprovalNobles").innerHTML = approvalNobles * 100;
 	document.getElementById("spanApprovalClergy").innerHTML = approvalClergy * 100;
 	document.getElementById("spanApprovalCommon").innerHTML = approvalCommon * 100;
-	document.getElementById("spanTaxPercentNobles").innerHTML = taxPercentNobles * 100;
-	document.getElementById("spanTaxPercentClergy").innerHTML = taxPercentClergy * 100;
-	document.getElementById("spanTaxPercentCommon").innerHTML = taxPercentCommon * 100;
+	document.getElementById("spanTaxPercentNobles").innerHTML = Math.round(taxPercentNobles * 100);
+	document.getElementById("spanTaxPercentClergy").innerHTML = Math.round(taxPercentClergy * 100);
+	document.getElementById("spanTaxPercentCommon").innerHTML = Math.round(taxPercentCommon * 100);
 }
