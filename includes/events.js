@@ -1,18 +1,3 @@
-var countEvt = 2;
-var idEvt
-var idOp1;
-var idOp2;
-
-/*function init() {
-	genIdEvt();
-	
-	turn();
-}*/
-
-/*function turn() {
-	genIdEvt();
-}*/
-
 ////////////////////////////////////////////////////////////////////////////////
 // Core event functions
 
