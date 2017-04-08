@@ -90,5 +90,7 @@ function updateControls() {
 }
 
 function updateEcon() {
-	
+	taxAmountNobles = taxPercentNobles * personalIncome * estatePopulation;
+	taxAmountClergy = taxPercentClergy * personalIncome * estatePopulation;
+	taxAmountCommon = taxPercentCommon * personalIncome * estatePopulation;
 }
