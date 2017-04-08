@@ -343,6 +343,9 @@ h4 h5 h6 {
 .float-right {
 	float: right !important;
 }
+.centered {
+	margin: 0px auto 0px auto;
+}
 
 /*   O T H E R   */
 .body {
