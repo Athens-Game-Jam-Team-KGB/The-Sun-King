@@ -32,9 +32,9 @@ var   outlayInterestTotal;
 
 function init() {
 	// Parliamentary variables
-	approvalClergy  = 50;
-	approvalCommon  = 50;
-	approvalNobles  = 50;
+	approvalClergy  = .50;
+	approvalCommon  = .50;
+	approvalNobles  = .50;
 	
 	// Economic variables
 	estatePopulation = 21000000 / 3; // We're pretending each state has the same population count in order to simulate some estates having more money than others
@@ -47,9 +47,9 @@ function init() {
 	taxAmountNobles  = 0;
 	taxAmountClergy  = 0;
 	taxAmountCommon  = 0;
-	taxPercentNobles = 0.1;
-	taxPercentClergy = 0.1;
-	taxPercentCommon = 0.1;
+	taxPercentNobles = 0.10;
+	taxPercentClergy = 0.10;
+	taxPercentCommon = 0.10;
 	taxAmountTotal   = 0;
 	treasuryCurrent  = 100000;
 	treasuryFuture   = 0;
@@ -74,10 +74,10 @@ function help() {
 
 function updateControls() {
 	//Update Parliamentary
-	document.getElementById("spanApprovalNobles").innerHTML = approvalNobles;
-	document.getElementById("spanApprovalClergy").innerHTML = approvalClergy;
-	document.getElementById("spanApprovalCommon").innerHTML = approvalCommon;
-	document.getElementById("spanTaxPercentNobles").innerHTML = taxPercentNobles;
-	document.getElementById("spanTaxPercentClergy").innerHTML = taxPercentClergy;
-	document.getElementById("spanTaxPercentCommon").innerHTML = taxPercentCommon;
+	document.getElementById("spanApprovalNobles").innerHTML = approvalNobles * 100;
+	document.getElementById("spanApprovalClergy").innerHTML = approvalClergy * 100;
+	document.getElementById("spanApprovalCommon").innerHTML = approvalCommon * 100;
+	document.getElementById("spanTaxPercentNobles").innerHTML = taxPercentNobles * 100;
+	document.getElementById("spanTaxPercentClergy").innerHTML = taxPercentClergy * 100;
+	document.getElementById("spanTaxPercentCommon").innerHTML = taxPercentCommon * 100;
 }
