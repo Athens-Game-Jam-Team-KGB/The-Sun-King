@@ -99,9 +99,10 @@ function updateControls() {
 	document.getElementById("spanTaxPercentCommon").innerHTML = Math.round(taxPercentCommon * 100);
 	
 	// Update tax amounts
-	document.getElementById("spanTaxAmtNobles").innerHTML = "<b>" + Math.round(taxAmtNobles * 100) + "</b>";
-	document.getElementById("spanTaxAmtClergy").innerHTML = "<b>" + Math.round(taxAmtClergy * 100) + "</b>";
-	document.getElementById("spanTaxAmtCommon").innerHTML = "<b>" + Math.round(taxAmtCommon * 100) + "</b>";
+	document.getElementById("spanTaxAmtNobles").innerHTML = Math.round(taxAmtNobles * 100);
+	document.getElementById("spanTaxAmtClergy").innerHTML = Math.round(taxAmtClergy * 100);
+	document.getElementById("spanTaxAmtCommon").innerHTML = Math.round(taxAmtCommon * 100);
+	document.getElementById("spanTaxAmtTotal").innerHTML = "<b>" + Math.round(taxAmtTotal * 100) + "</b>";
 }
 
 function updateEcon() {
