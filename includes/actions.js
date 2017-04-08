@@ -2,33 +2,24 @@
 // Slider handlers
 
 function handleSlideTaxPercentNobles() {
-	switch(idEvt) {
-		default:
-		break;
-	}
+	updateControls();
 }
 
 function handleSlideTaxPercentClergy() {
-	switch(idEvt) {
-		default:
-		break;
-	}
+	updateControls();
 }
 
 function handleSlideTaxPercentCommon() {
-	switch(idEvt) {
-		default:
-		break;
-	}
+	updateControls();
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // Loans
 
 function loanTake() {
-	
+	updateControls();
 }
 
 function loanRepay() {
-	
+	updateControls();
 }
