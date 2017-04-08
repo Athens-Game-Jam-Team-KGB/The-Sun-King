@@ -13,7 +13,7 @@
 		<table>
 			<tr>
 				<td class=pad-top colspan=2>
-					<div class="card mar-full">
+					<div class="card mar-hor">
 						<h1>The Sun King</h1>
 						<span class=float-right>
 							<button id="btnTurn" class=button onclick=turn()>Next Turn</button>
@@ -23,15 +23,15 @@
 					</div>
 				</td>
 			</tr><tr>
-				<td class=pad-top>
-					<div class="card mar-hor">
+				<td><table>
+					<tr><td class=pad-top><div class="card mar-hor">
 						<h2>Event</h2>
 						<p id="evtTxt">Event text goes here.</p>
 						<button id="btnEvt1" class=button onclick=handleBtnEvt1()>Option1</button>
 						<button id="btnEvt2" class=button onclick=handleBtnEvt2()>Option2</button>
 						<p>Option selected: <span id=spanBtnEvtSelected>N/A</span></p>
-					</div>
-					<div class="card mar-right">
+					</div></td></tr>
+					<tr><td class=pad-top><div class="card mar-right">
 						<h2>Policies &amp; Actions</h2>
 						<ul>
 							<li>Policies go here.</li>
@@ -55,9 +55,9 @@
 								<button class=button onclick=loanRepay()>Repay a Loan</button>
 							</li>
 						</ul>
-					</div>
-				</td><td class=pad-top>
-					<div class="card mar-right">
+					</div></td></tr>
+				</table></td><td><table>
+					<tr><td class=pad-top><div class="card mar-right">
 						<h2>Parliament</h2>
 						<table>
 							<tr>
@@ -71,8 +71,8 @@
 								<td><span id=loyaltyCommon>50</span>%&nbsp;Support</td>
 							</tr>
 						</table>
-					</div>
-					<div class="card mar-right">
+					</div></td></tr>
+					<tr><td class=pad-top><div class="card mar-right">
 						<h2>Accounting</h2>
 						<table>
 							<tr>
@@ -119,8 +119,8 @@
 								<td>£<span id=spanTreasuryFuture>0</span></td>
 							</tr>
 						</table>
-					</div>
-				</td>
+					</div></td></tr>
+				</table></td>
 			</tr>
 		</table>
 		<!--<script>init()</script>-->
