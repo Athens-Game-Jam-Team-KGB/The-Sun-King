@@ -337,6 +337,9 @@ h4 h5 h6 {
 .float-left {
 	float: left !important;
 }
+.float-center {
+	float: center !important;
+}
 .float-right {
 	float: right !important;
 }
