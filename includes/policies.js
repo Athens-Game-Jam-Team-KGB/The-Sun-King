@@ -1,21 +1,4 @@
 ////////////////////////////////////////////////////////////////////////////////
-// Button handlers
-
-function handleBtnEvt1() {
-	switch(idEvt) {
-		default:
-		break;
-	}
-}
-
-function handleBtnEvt2() {
-	switch(idEvt) {
-		default:
-		break;
-	}
-}
-
-////////////////////////////////////////////////////////////////////////////////
 // Slider handlers
 
 function handleSlideTaxPercentNobles() {
