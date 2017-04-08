@@ -67,6 +67,7 @@ function turn() {
 	// Update events
 	genIdEvt();
 	updateTxtEvt();  // Already calls updateControls()
+	updateEcon();
 }
 
 function die() {
@@ -85,4 +86,8 @@ function updateControls() {
 	document.getElementById("spanTaxPercentNobles").innerHTML = Math.round(taxPercentNobles * 100);
 	document.getElementById("spanTaxPercentClergy").innerHTML = Math.round(taxPercentClergy * 100);
 	document.getElementById("spanTaxPercentCommon").innerHTML = Math.round(taxPercentCommon * 100);
+}
+
+function updateEcon() {
+	
 }
