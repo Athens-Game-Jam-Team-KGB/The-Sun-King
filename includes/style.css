@@ -2,11 +2,11 @@
 *:root {
 	--bg-default: #FFF;
 	--bg-dark:	#EEE;
-	--bg-link:	#9CF;
-	--bg-visited: #C9F;
-	--fg-default: #444;
-	--fg-link:	#369;
-	--fg-visited: #639;
+	--bg-link:	#FFF;
+	--bg-visited: #FFF;
+	--fg-default: #432;
+	--fg-link:	#432;
+	--fg-visited: #432;
 	--font-sans:  sans-serif;
 	--font-serif: serif;
 	--font-mono:  monospace;
