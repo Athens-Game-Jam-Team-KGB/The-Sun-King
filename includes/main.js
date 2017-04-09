@@ -149,8 +149,8 @@ function handleBtnGame() {
 function updateControls() {
 	// Show/Hide the repay loan button
 	if(loanCount > 0)
-		document.getElementById("btnLoanTake").style.display = "initial";
-	else	document.getElementById("btnLoanTake").style.display = "none";
+		document.getElementById("btnLoanRepay").style.display = "initial";
+	else	document.getElementById("btnLoanRepay").style.display = "none";
 	
 	//Update parliament
 	/*if*/ if(approvalNobles > 100) {
