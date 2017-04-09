@@ -11,7 +11,7 @@ function handleSlideTaxRateNobles() {
 
 function handleSlideTaxRateClergy() {
 	var newRate = document.getElementById("slideTaxRateClergy").value / 100;
-	approvalClergy-= newRate - taxRateClergy;
+	approvalClergy-= 2 * (newRate - taxRateClergy);
 	taxRateClergy = newRate;
 	updateEcon();
 	updateControls();
