@@ -74,7 +74,12 @@ b {
 	font-weight: bold;
 }
 body {
-	background: var(--bg-dark) url("../resources/background.jpg") contain;
+	background-color: var(--bg-dark);
+	background-image: url("../resources/background.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center; 
 	bottom: 0;
 	box-shadow: 0px 0px 4px 3px var(--shadow) inset;
 	left: 0;
