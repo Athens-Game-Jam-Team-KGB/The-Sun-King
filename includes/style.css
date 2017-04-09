@@ -118,7 +118,7 @@ h4 h5 h6 {
 }
 hr {
 	border-style: inset;
-	border-width: 1px;
+	border-width: 1px solid var(--fg-default);
 	display: block;
 	margin-top: var(--pad-quarter);
 	margin-bottom: var(--pad-quarter);
