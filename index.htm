@@ -10,21 +10,22 @@
 		<script type=text/javascript src=includes/actions.js></script>
 	</head>
 	<body class=body onload=init()>
-		<div class="card mar-full" style=display:none>
+		<div id=divHelp class="card mar-full" style=display:none>
 			<h2>Helptext</h2>
 			<p>The helptext goes here.</p>
 		</div>
-		<div class="card mar-full" style=display:none>
+		<div id=divGameOver class="card mar-full" style=display:none>
 			<h2>Game&nbsp;Over</h2>
 			<p>Vive&nbsp;la&nbsp;revolución!</p>
 			<img width=1024 src=resources/gameOver.png alt=Guillotine>
 		</div>
-		<table class=centered>
+		<table id=divGame class=centered>
 			<tr><td class=pad-top colspan=2>
 				<div class="card mar-hor">
 					<h1 class=float-left>The&nbsp;Sun&nbsp;King</h1>
 					<span class=float-right>
 						<button id=btnTurn class=button onclick=turn() style=display:none>Next&nbsp;Turn</button>
+						<button id=btnGame class=button onclick=game()>Return to Game</button>
 						<button id=btnHelp class=button onclick=help()>Help</button>
 						<button id=btnInit class=button onclick=init()>New Game</button>
 					</span>
