@@ -84,11 +84,7 @@ b {
 	z-index: -1;
 }
 body {
-	background: var(--bg-dark) url("resources/background.jpg") no-repeat fixed center;
-	box-shadow: 0px 0px 4px 3px var(--shadow) inset;
-	left: 0;
-	top: 0;
-	z-index: -1;
+	background-image: url("resources/background.jpg");
 }
 button {
 	background: var(--fg-default);
