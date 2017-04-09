@@ -32,9 +32,9 @@ var   taxRateCommon;
 var   taxRateDefault;
 var   treasuryCurrent;
 var   treasuryFuture;
-const corruptRateNobles = 1.5;
-const corruptRateClergy = 1.0;
-const corruptRateCommon = 1.0;
+const corruptRateNobles = 1.50;
+const corruptRateClergy = 1.25;
+const corruptRateCommon = 1.00;
 var   outlayCorrupt;
 var   outlayEvt;
 var   outlayInterestTotal;
@@ -60,30 +60,30 @@ function init() {
 	populationCommon = 0;
 	
 	// Economic variables
-	loanCount        = 0;
-	incomeNobles     = 3000;    // This is the average seasonal income (in livres) of a governer in France in the year 1700, per:  http://freepages.genealogy.rootsweb.ancestry.com/~unclefred/MONETARY.htm
-	incomeClergy     = 0; //600 // This is the average seasonal income (in livres) of a mid-ranking official in France in the year 1700, per:  http://freepages.genealogy.rootsweb.ancestry.com/~unclefred/MONETARY.htm
-	incomeCommon     = 225;     // This is the average seasonal income (in livres) of a half-skilled worker in France in the year 1700, per:  http://freepages.genealogy.rootsweb.ancestry.com/~unclefred/MONETARY.htm
-	netChange        = 0;
-	outlayCorrupt    = 0;
-	outlayEvt        = 0;
-	outlayInterest   = 0;
-	outlayTotal      = 0;
-	receiptEvt       = 0;
-	receiptTotal     = 0;
-	taxAmtNobles     = 0;
-	taxAmtClergy     = 0;
-	taxAmtCommon     = 0;
-	taxAmtTotal      = 0;
-	taxRateNobles = 0.10;
-	taxRateClergy = 0.00;
-	taxRateCommon = 0.10;
+	loanCount        =       0;
+	incomeNobles     =    3000; // This is the average seasonal income (in livres) of a governer in France in the year 1700, per:  http://freepages.genealogy.rootsweb.ancestry.com/~unclefred/MONETARY.htm
+	incomeClergy     =     600; // This is the average seasonal income (in livres) of a mid-ranking official in France in the year 1700, per:  http://freepages.genealogy.rootsweb.ancestry.com/~unclefred/MONETARY.htm
+	incomeCommon     =     225; // This is the average seasonal income (in livres) of a half-skilled worker in France in the year 1700, per:  http://freepages.genealogy.rootsweb.ancestry.com/~unclefred/MONETARY.htm
+	netChange        =       0;
+	outlayCorrupt    =       0;
+	outlayEvt        =       0;
+	outlayInterest   =       0;
+	outlayTotal      =       0;
+	receiptEvt       =       0;
+	receiptTotal     =       0;
+	taxAmtNobles     =       0;
+	taxAmtClergy     =       0;
+	taxAmtCommon     =       0;
+	taxAmtTotal      =       0;
+	taxRateNobles    =    0.10;
+	taxRateClergy    =    0.00;
+	taxRateCommon    =    0.10;
 	treasuryCurrent  = 1000000;
 	treasuryFuture   = treasuryCurrent;
 	
 	// Reset UI
 	document.getElementById("slideTaxRateNobles").value = 10;
-//	document.getElementById("slideTaxRateClergy").value = 10;
+	document.getElementById("slideTaxRateClergy").value =  0;
 	document.getElementById("slideTaxRateCommon").value = 10;
 	document.getElementById("divGame").style.display = "inline";
 	document.getElementById("btnGame").style.display = "none";
@@ -100,7 +100,7 @@ function turn() {
 	populationGrowth = 1.0019; // Between 1600 and 1801, per https://en.wikipedia.org/wiki/Demographics_of_France#Historical_population_figures
 	populationTotal *= populationGrowth; // https://en.wikipedia.org/wiki/List_of_countries_by_population_in_1700
 	populationNobles = 0.01 * populationTotal;  // https://en.wikipedia.org/wiki/French_nobility
-//	populationClergy = 0.1  * populationTotal;   // Completely arbitrary;  based on the whole "10% tithe" thing.
+	populationClergy = 0.05 * populationTotal;  // Completely arbitrary.
 	populationCommon = populationTotal - populationNobles - populationClergy;  // https://en.wikipedia.org/wiki/French_nobility
 	
 	// Update economy
@@ -151,12 +151,12 @@ function updateControls() {
 	
 	// Update tax sliders
 	document.getElementById("spanTaxRateNobles").innerHTML = Math.round(taxRateNobles * 100);
-//	document.getElementById("spanTaxRateClergy").innerHTML = Math.round(taxRateClergy * 100);
+	document.getElementById("spanTaxRateClergy").innerHTML = Math.round(taxRateClergy * 100);
 	document.getElementById("spanTaxRateCommon").innerHTML = Math.round(taxRateCommon * 100);
 	
 	// Update receipts
 	document.getElementById("spanTaxAmtNobles").innerHTML = Math.round(taxAmtNobles);
-//	document.getElementById("spanTaxAmtClergy").innerHTML = Math.round(taxAmtClergy);
+	document.getElementById("spanTaxAmtClergy").innerHTML = Math.round(taxAmtClergy);
 	document.getElementById("spanTaxAmtCommon").innerHTML = Math.round(taxAmtCommon);
 	document.getElementById("spanTaxAmtTotal").innerHTML = "<b>" + Math.round(taxAmtTotal) + "</b>";
 	document.getElementById("spanReceiptEvt").innerHTML = "<b>" + Math.round(receiptEvt) + "</b>";
