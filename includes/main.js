@@ -222,7 +222,7 @@ function updateEcon() {
 }
 
 function playMusic() {
-	music = new Audio("resources/Jean-Philippe_Rameau_-_Gavotte_and_Variations.ogg");
+	music = new Audio("resources/music.ogg");
 	music.loop = true;
 	music.play();
 }
