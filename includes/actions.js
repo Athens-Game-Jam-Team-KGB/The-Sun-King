@@ -3,7 +3,7 @@
 
 function handleSlideTaxRateNobles() {
 	var newRate = document.getElementById("slideTaxRateNobles").value / 100;
-	approvalNobles+= newRate - taxRateNobles;
+	approvalNobles-= newRate - taxRateNobles;
 	taxRateNobles = newRate;
 	updateEcon();
 	updateControls();
@@ -11,7 +11,7 @@ function handleSlideTaxRateNobles() {
 
 function handleSlideTaxRateClergy() {
 	var newRate = document.getElementById("slideTaxRateClergy").value / 100;
-	approvalClergy+= newRate - taxRateClergy;
+	approvalClergy-= newRate - taxRateClergy;
 	taxRateClergy = newRate;
 	updateEcon();
 	updateControls();
@@ -19,7 +19,7 @@ function handleSlideTaxRateClergy() {
 
 function handleSlideTaxRateCommon() {
 	var newRate = document.getElementById("slideTaxRateCommon").value / 100;
-	approvalCommon+= newRate - taxRateCommon;
+	approvalCommon-= newRate - taxRateCommon;
 	taxRateCommon = newRate;
 	updateEcon();
 	updateControls();
