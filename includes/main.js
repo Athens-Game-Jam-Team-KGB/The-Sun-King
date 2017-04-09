@@ -89,7 +89,6 @@ function init() {
 	document.getElementById("divHelp").style.display = "none";
 	document.getElementById("btnHelp").style.display = "none";
 	document.getElementById("divGameOver").style.display = "none";
-	document.getElementById("btnGameOver").style.display = "none";
 	
 	// Start the first turn
 	turn();
