@@ -73,6 +73,16 @@ a:active {
 b {
 	font-weight: bold;
 }
+body {
+	background: var(--bg-dark) url(resources/background.png) no-repeat fixed center;
+	bottom: 0;
+	box-shadow: 0px 0px 4px 3px var(--shadow) inset;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: -1;
+}
 button {
 	background: var(--fg-default);
 	border-radius: var(--pad-full);
@@ -248,16 +258,6 @@ u {
 }
 
 /*   O T H E R   */
-.body {
-	background: var(--bg-dark);
-	bottom: 0;
-	box-shadow: 0px 0px 4px 3px var(--shadow) inset;
-	left: 0;
-	position: absolute;
-	right: 0;
-	top: 0;
-	z-index: -1;
-}
 .invisible {
 	background: var(--bg-default)00;
 	box-shadow: none;
