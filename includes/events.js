@@ -39,6 +39,9 @@ function updateTxtEvt() {
 		else if(idEvt == 10){
 			document.getElementById("evtTxt").innerHTML = "It is your birthday, also a national holiday";
 		}
+		else if(idEvt == 11){
+			document.getElementById("evtTxt").innerHTML = "A wanted criminal has escaped to a neighboring country with classified intel";
+		}
 		
 		updateBtnTxt1();
 		updateBtnTxt2();
@@ -223,6 +226,23 @@ function updateBtnTxt1(){
 			document.getElementById("btnEvt1").innerHTML = "Throw a lavish party that only the commoners can attend";
 		}
 	}
+	
+	//Birthday event
+	else if(idEvt == 11){
+		idOp1 = Math.floor(Math.random() * 4);
+		while(idOp1 < 1){
+			idOp1 = Math.floor(Math.random() * 4);
+		}
+		if(idOp1 == 1){
+			document.getElementById("btnEvt1").innerHTML = "Do nothing, and wait";
+		}
+		else if(idOp1 == 2){
+			document.getElementById("btnEvt1").innerHTML = "Give in and pardon the criminal to get him back";
+		}
+		else if(idOp1 == 3){
+			document.getElementById("btnEvt1").innerHTML = "Your heir gets assasinated due to leaked information";
+		}
+	}
 }
 
 function updateBtnTxt2(){
@@ -400,6 +420,22 @@ function updateBtnTxt2(){
 			document.getElementById("btnEvt2").innerHTML = "Throw a lavish party that only the commoners can attend";
 		}
 	}
+	
+	else if(idEvt == 11){
+		idOp2 = Math.floor(Math.random() * 4);
+		while(idOp2 == idOp1 || idOp2 < 1){
+			idOp2 = Math.floor(Math.random() * 4);
+		}
+		if(idOp2 == 1){
+			document.getElementById("btnEvt2").innerHTML = "Do nothing, and wait";
+		}
+		else if(idOp2 == 2){
+			document.getElementById("btnEvt2").innerHTML = "Give in and pardon the criminal to get him back";
+		}
+		else if(idOp2 == 3){
+			document.getElementById("btnEvt2").innerHTML = "Your heir gets assasinated due to leaked information";
+		}
+	}
 }
 
 function handleBtnEvt1() {
@@ -567,6 +603,22 @@ function handleBtnEvt1() {
 			else if(idOp1 == 4){
 				approvalNobles -= .05;
 				approvalCommon += .1;
+			}
+		}
+		
+		else if(idEvt == 11){
+			if(idOp1 == 1){
+				//Neutral
+			}
+			else if(idOp1 == 2){
+				approvalNobles -= .1;
+				approvalCommon -= .05;
+				approvalClergy -= .05;
+			}
+			else if(idOp1 == 3){
+				approvalNobles -= .15;
+				approvalCommon -= .05;
+				approvalClergy -= .05;
 			}
 		}
 		updateControls();
@@ -748,6 +800,22 @@ function handleBtnEvt2() {
 			else if(idOp2 == 4){
 				approvalNobles -= .05;
 				approvalCommon += .1;
+			}
+		}
+		
+		else if(idEvt == 11){
+			if(idOp1 == 1){
+				//Neutral
+			}
+			else if(idOp1 == 2){
+				approvalNobles -= .1;
+				approvalCommon -= .05;
+				approvalClergy -= .05;
+			}
+			else if(idOp1 == 3){
+				approvalNobles -= .15;
+				approvalCommon -= .05;
+				approvalClergy -= .05;
 			}
 		}
 		updateControls();
