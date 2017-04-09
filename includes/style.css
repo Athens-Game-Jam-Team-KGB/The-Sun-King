@@ -1,12 +1,12 @@
 /*   V A R I A B L E S   */
 *:root {
-	--bg-default: #FFF;
-	--bg-dark:	#EEE;
-	--bg-link:	#c55;
-	--bg-visited: #c55;
-	--fg-default: #432;
-	--fg-link:	#422;
-	--fg-visited: #422;
+	--bg-default: #FED;
+	--bg-dark:	#EDC;
+	--bg-link:	#FEE;
+	--bg-visited: #FDE;
+	--fg-default: #321;
+	--fg-link:	#322;
+	--fg-visited: #312;
 	--font-sans:  sans-serif;
 	--font-serif: serif;
 	--font-mono:  monospace;
