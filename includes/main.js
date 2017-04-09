@@ -86,9 +86,9 @@ function init() {
 //	document.getElementById("slideTaxRateClergy").value = 10;
 	document.getElementById("slideTaxRateCommon").value = 10;
 	document.getElementById("divGame").style.display = "inline";
-	document.getElementById("btnGame").style.display = "inline";
+	document.getElementById("btnGame").style.display = "none";
 	document.getElementById("divHelp").style.display = "none";
-	document.getElementById("btnHelp").style.display = "none";
+	document.getElementById("btnHelp").style.display = "inline";
 	document.getElementById("divGameOver").style.display = "none";
 	
 	// Start the first turn
@@ -124,21 +124,21 @@ function gameOver() {
 	document.getElementById("btnGame").style.display = "none";
 	document.getElementById("divHelp").style.display = "none";
 	document.getElementById("btnHelp").style.display = "none";
-	document.getElementById("divGameOver").style.display = "block";
-	document.getElementById("btnGameOver").style.display = "block";
+	document.getElementById("divGameOver").style.display = "inline";
+	document.getElementById("btnGameOver").style.display = "inline";
 }
 
 function help() {
 	document.getElementById("divGame").style.display = "none";
-	document.getElementById("divHelp").style.display = "block";
+	document.getElementById("divHelp").style.display = "inline";
 	document.getElementById("btnHelp").style.display = "none";
-	document.getElementById("btnGame").style.display = "block";
+	document.getElementById("btnGame").style.display = "inline";
 }
 
 function handleBtnGame() {
-	document.getElementById("divGame").style.display = "block";
+	document.getElementById("divGame").style.display = "inline";
 	document.getElementById("divHelp").style.display = "none";
-	document.getElementById("btnHelp").style.display = "block";
+	document.getElementById("btnHelp").style.display = "inline";
 	document.getElementById("btnGame").style.display = "none";
 }
 
