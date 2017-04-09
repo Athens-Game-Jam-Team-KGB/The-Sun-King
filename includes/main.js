@@ -4,7 +4,7 @@ var   approvalCommon;
 var   approvalNobles;
 
 // Event variables
-const countEvt = 12;
+const countEvt = 20;
 var   idEvt;
 var   idOp1;
 var   idOp2;
@@ -81,10 +81,12 @@ function init() {
 	treasuryFuture   = treasuryCurrent;
 	
 	// Reset UI
+	document.getElementById("body").style.backgroundImage = "resources/background.png";
 	document.getElementById("slideTaxRateNobles").value = 10;
 	document.getElementById("slideTaxRateClergy").value =  0;
 	document.getElementById("slideTaxRateCommon").value = 10;
-	document.getElementById("divGame").style.display = "initial";
+	document.getElementById("divGame1").style.display = "initial";
+	document.getElementById("divGame2").style.display = "initial";
 	document.getElementById("btnGame").style.display = "none";
 	document.getElementById("divHelp").style.display = "none";
 	document.getElementById("btnHelp").style.display = "initial";
@@ -122,6 +124,9 @@ function turn() {
 	document.getElementById("ulBtnEvt").style.display = "initial";
 	document.getElementById("liEvtOpt").style.display = "none";
 	genIdEvt();
+	if(treasuryCurrent < 0){
+		idEvt = -1;
+	}
 	updateTxtEvt();
 	updateControls();
 }
@@ -129,25 +134,28 @@ function turn() {
 function gameOver() {
 	var guillotine = new Audio("resources/guillotine.ogg");
 	guillotine.play();
-	document.getElementById("divGame").style.display = "none";
+	document.getElementById("body").style.backgroundImage = "../resources/gameOver.png";
+	document.getElementById("divGame1").style.display = "none";
+	document.getElementById("divGame2").style.display = "none";
 	document.getElementById("btnGame").style.display = "none";
 	document.getElementById("divHelp").style.display = "none";
 	document.getElementById("btnHelp").style.display = "none";
-	document.getElementById("divGameOver").style.display = "initial";
-	document.getElementById("btnGameOver").style.display = "initial";
+	document.getElementById("divGameOver").style.display = "block";
 }
 
 function help() {
 	playClick();
-	document.getElementById("divGame").style.display = "none";
-	document.getElementById("divHelp").style.display = "initial";
+	document.getElementById("divGame1").style.display = "none";
+	document.getElementById("divGame2").style.display = "none";
+	document.getElementById("divHelp").style.display = "block";
 	document.getElementById("btnHelp").style.display = "none";
 	document.getElementById("btnGame").style.display = "initial";
 }
 
 function handleBtnGame() {
 	playClick();
-	document.getElementById("divGame").style.display = "initial";
+	document.getElementById("divGame1").style.display = "initial";
+	document.getElementById("divGame2").style.display = "initial";
 	document.getElementById("divHelp").style.display = "none";
 	document.getElementById("btnHelp").style.display = "initial";
 	document.getElementById("btnGame").style.display = "none";
@@ -208,6 +216,10 @@ function updateControls() {
 	// Update treasury
 	document.getElementById("spanTreasuryCurrent").innerHTML = "<b>" + Math.round(treasuryCurrent) + "</b>";
 	document.getElementById("spanTreasuryFuture").innerHTML  = "<b>" + Math.round(treasuryFuture) + "</b>";
+	
+	if(approvalNobles < .25 || approvalClergy < .25 || approvalCommon < .25){
+		gameOver();
+	}
 }
 
 function updateEcon() {
