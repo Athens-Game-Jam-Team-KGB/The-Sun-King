@@ -39,3 +39,8 @@ Licenses
   + resources/common.png (CC-BY-SA-3) (https://commons.wikimedia.org/wiki/File:Tricolour_Cockade.svg)
   + resources/gameover.png (No Copyright) (https://commons.wikimedia.org/wiki/File:Hinrichtung_Ludwig_des_XVI.png)
   + resourecs/nobles.png (CC-BY-SA-3) (source:  https://commons.wikimedia.org/wiki/File:Royal_Monogram_of_King_Louis_XIV_of_France.svg)
+  + resources/coa.png (CC-BY-SA-3) (source: https://en.wikipedia.org/wiki/National_emblem_of_France#/media/File:Grand_Royal_Coat_of_Arms_of_France_%26_Navarre.svg)
+  + resources/pna.png (CC-BY-SA-1) (source: https://commons.wikimedia.org/wiki/File:Plume_d%27oie.jpg)
+  + resources/parliament.png (No Copyright) (source: https://commons.wikimedia.org/wiki/File:Flag_of_France_(XIV-XVI).svg)
+  + resources/accounting.png (No Copyright) (source: https://plus.google.com/photos/114955536568171203485/albums/5784841128246103425/5784841128495224082)
+  + resources/event.png (CC-BY-SA-4) (self-made)
