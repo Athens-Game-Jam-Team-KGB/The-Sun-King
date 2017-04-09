@@ -26,14 +26,15 @@ var   taxAmtNobles;
 var   taxAmtClergy;
 var   taxAmtCommon;
 var   taxAmtTotal;
-var   taxPercentNobles;
-var   taxPercentClergy;
-var   taxPercentCommon;
+var   taxRateNobles;
+var   taxRateClergy;
+var   taxRateCommon;
+var   taxRateDefault;
 var   treasuryCurrent;
 var   treasuryFuture;
-const corruptPercentNobles = 1.0;
-const corruptPercentClergy = 0.7;
-const corruptPercentCommon = 0.3;
+const corruptRateNobles = 1.0;
+const corruptRateClergy = 0.7;
+const corruptRateCommon = 0.3;
 var   outlayCorrupt;
 var   outlayEvt;
 var   outlayInterestTotal;
@@ -74,16 +75,16 @@ function init() {
 	taxAmtClergy     = 0;
 	taxAmtCommon     = 0;
 	taxAmtTotal      = 0;
-	taxPercentNobles = 0.10;
-	taxPercentClergy = 0.00;
-	taxPercentCommon = 0.10;
+	taxRateNobles = 0.10;
+	taxRateClergy = 0.00;
+	taxRateCommon = 0.10;
 	treasuryCurrent  = 1000000;
 	treasuryFuture   = treasuryCurrent;
 	
 	// Reset UI
-	document.getElementById("slideTaxPercentNobles").value = 10;
-//	document.getElementById("slideTaxPercentClergy").value = 10;
-	document.getElementById("slideTaxPercentCommon").value = 10;
+	document.getElementById("slideTaxRateNobles").value = 10;
+//	document.getElementById("slideTaxRateClergy").value = 10;
+	document.getElementById("slideTaxRateCommon").value = 10;
 	document.getElementById("divGame").style.display = "block";
 	document.getElementById("btnGame").style.display = "block";
 	document.getElementById("divHelp").style.display = "none";
@@ -148,9 +149,9 @@ function updateControls() {
 	document.getElementById("spanApprovalCommon").innerHTML = Math.round(approvalCommon * 100);
 	
 	// Update tax sliders
-	document.getElementById("spanTaxPercentNobles").innerHTML = Math.round(taxPercentNobles * 100);
-//	document.getElementById("spanTaxPercentClergy").innerHTML = Math.round(taxPercentClergy * 100);
-	document.getElementById("spanTaxPercentCommon").innerHTML = Math.round(taxPercentCommon * 100);
+	document.getElementById("spanTaxRateNobles").innerHTML = Math.round(taxRateNobles * 100);
+//	document.getElementById("spanTaxRateClergy").innerHTML = Math.round(taxRateClergy * 100);
+	document.getElementById("spanTaxRateCommon").innerHTML = Math.round(taxRateCommon * 100);
 	
 	// Update receipts
 	document.getElementById("spanTaxAmtNobles").innerHTML = Math.round(taxAmtNobles);
@@ -175,14 +176,14 @@ function updateControls() {
 }
 
 function updateEcon() {
-	taxAmtNobles = taxPercentNobles * incomeNobles * populationNobles;
-	taxAmtClergy = taxPercentClergy * incomeClergy * populationClergy;
-	taxAmtCommon = taxPercentCommon * incomeCommon * populationCommon;
+	taxAmtNobles = taxRateNobles * incomeNobles * populationNobles;
+	taxAmtClergy = taxRateClergy * incomeClergy * populationClergy;
+	taxAmtCommon = taxRateCommon * incomeCommon * populationCommon;
 	taxAmtTotal = taxAmtNobles + taxAmtClergy + taxAmtCommon;
 	receiptTotal = taxAmtTotal + receiptEvt;
-	outlayCorrupt = corruptPercentNobles * (1 - approvalNobles) * taxAmtNobles * 2
-		      + corruptPercentClergy * (1 - approvalClergy) * taxAmtClergy * 2
-		      + corruptPercentCommon * (1 - approvalCommon) * taxAmtCommon * 2;
+	outlayCorrupt = corruptRateNobles * (1 - approvalNobles) * taxAmtNobles * 2
+		      + corruptRateClergy * (1 - approvalClergy) * taxAmtClergy * 2
+		      + corruptRateCommon * (1 - approvalCommon) * taxAmtCommon * 2;
 	outlayInterest = loanCount * loanAmt * loanInterestRate;
 	outlayTotal = outlayInterest + outlayEvt + outlayCorrupt;
 	netChange = receiptTotal - outlayTotal;
