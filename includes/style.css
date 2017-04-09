@@ -76,7 +76,7 @@ b {
 body {
 	background-color: var(--bg-dark);
 	background-image: url("../resources/background.jpg");
-	background-size: contain;
+	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center; 
