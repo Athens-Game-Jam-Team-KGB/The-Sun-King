@@ -85,10 +85,10 @@ function init() {
 	document.getElementById("slideTaxRateNobles").value = 10;
 	document.getElementById("slideTaxRateClergy").value =  0;
 	document.getElementById("slideTaxRateCommon").value = 10;
-	document.getElementById("divGame").style.display = "inline";
+	document.getElementById("divGame").style.display = "initial";
 	document.getElementById("btnGame").style.display = "none";
 	document.getElementById("divHelp").style.display = "none";
-	document.getElementById("btnHelp").style.display = "inline";
+	document.getElementById("btnHelp").style.display = "initial";
 	document.getElementById("divGameOver").style.display = "none";
 	
 	// Start the first turn
@@ -115,7 +115,7 @@ function turn() {
 	
 	// Update misc
 	document.getElementById("btnTurn").style.display = "none";
-	document.getElementById("ulBtnEvt").style.display = "inline";
+	document.getElementById("ulBtnEvt").style.display = "initial";
 	document.getElementById("liEvtOpt").style.display = "none";
 	genIdEvt();
 	updateTxtEvt();
@@ -127,21 +127,21 @@ function gameOver() {
 	document.getElementById("btnGame").style.display = "none";
 	document.getElementById("divHelp").style.display = "none";
 	document.getElementById("btnHelp").style.display = "none";
-	document.getElementById("divGameOver").style.display = "inline";
-	document.getElementById("btnGameOver").style.display = "inline";
+	document.getElementById("divGameOver").style.display = "initial";
+	document.getElementById("btnGameOver").style.display = "initial";
 }
 
 function help() {
 	document.getElementById("divGame").style.display = "none";
-	document.getElementById("divHelp").style.display = "inline";
+	document.getElementById("divHelp").style.display = "initial";
 	document.getElementById("btnHelp").style.display = "none";
-	document.getElementById("btnGame").style.display = "inline";
+	document.getElementById("btnGame").style.display = "initial";
 }
 
 function handleBtnGame() {
-	document.getElementById("divGame").style.display = "inline";
+	document.getElementById("divGame").style.display = "initial";
 	document.getElementById("divHelp").style.display = "none";
-	document.getElementById("btnHelp").style.display = "inline";
+	document.getElementById("btnHelp").style.display = "initial";
 	document.getElementById("btnGame").style.display = "none";
 }
 
