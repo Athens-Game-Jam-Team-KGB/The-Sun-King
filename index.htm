@@ -26,8 +26,8 @@
 				</div>
 			</td></tr><tr><td class=pad-bottom>
 				<table id=divGame class=mar-left>
-					<tr id=divGame><td class=pad-top colspan=2>
-						<div class="card mar-hor">
+					<tr><td class=pad-top>
+						<div class="card mar-right">
 							<h2>
 								<img width=24 height=24 src=resources/event.png>&nbsp;
 								Event
@@ -41,72 +41,74 @@
 								<li id=liEvtOpt><br><b>Option&nbsp;selected:</b> <span id=spanEvtOpt>N/A</span></li>
 							</ul>
 						</div>
-					</td></tr><tr><td class=pad-top><div class="card mar-right">
-						<h2>
-							<img width=24 height=24 src=resources/parliament.png>&nbsp;
-							Parliament
-						</h2>
+					</td></tr><tr><td>
 						<table>
-							<tr>
-								<td><img width=16px height=16px src=resources/nobles.png alt=Nobility></td>
-								<td>&nbsp;<span id=spanApprovalNobles>67</span>%&nbsp;Approval</td>
-								<tooltip>Your approval rate among the nobility.</tooltip>
-							</tr><tr>
-								<td><img width=16px height=16px src=resources/clergy.png alt=Clergy></td>
-								<td>&nbsp;<span id=spanApprovalClergy>50</span>%&nbsp;Approval</td>
-								<tooltip>Your approval rate among the clergy.</tooltip>
-							</tr><tr>
-								<td><img width=16px height=16px src=resources/common.png alt=Commoners></td>
-								<td>&nbsp;<span id=spanApprovalCommon>33</span>%&nbsp;Approval</td>
-								<tooltip>Your approval rate among the commoners.</tooltip>
-							</tr>
+							<tr><td class=pad-top><div class="card mar-right">
+								<h2>
+									<img width=24 height=24 src=resources/parliament.png>&nbsp;
+									Parliament
+								</h2>
+								<table>
+									<tr>
+										<td><img width=16px height=16px src=resources/nobles.png alt=Nobility></td>
+										<td>&nbsp;<span id=spanApprovalNobles>67</span>%&nbsp;Approval</td>
+										<tooltip>Your approval rate among the nobility.</tooltip>
+									</tr><tr>
+										<td><img width=16px height=16px src=resources/clergy.png alt=Clergy></td>
+										<td>&nbsp;<span id=spanApprovalClergy>50</span>%&nbsp;Approval</td>
+										<tooltip>Your approval rate among the clergy.</tooltip>
+									</tr><tr>
+										<td><img width=16px height=16px src=resources/common.png alt=Commoners></td>
+										<td>&nbsp;<span id=spanApprovalCommon>33</span>%&nbsp;Approval</td>
+										<tooltip>Your approval rate among the commoners.</tooltip>
+									</tr>
+								</table>
+							</div></td></tr>
+							<tr><td class=pad-top><div class="card mar-right">
+								<h2>
+									<img width=24 height=24 src=resources/pna.png>&nbsp;
+									Policies&nbsp;&amp;&nbsp;Actions
+								</h2>
+								<ul>
+									<li><h3><u>Taxes</u></h3></li>
+									<li>
+										<img width=16px height=16px src=resources/nobles.png alt=Nobility>
+										<input id=slideTaxRateNobles type=range min=0 max=100 step=1 value=10 onchange=handleSlideTaxRateNobles()>
+										&nbsp;<span id=spanTaxRateNobles>10</span>%
+										<tooltip>Tax rate for the nobility.</tooltip>
+									</li><li>
+										<img width=16px height=16px src=resources/clergy.png alt=Clergy>
+										<input id=slideTaxRateClergy type=range min=0 max=100 step=1 value=10 onchange=handleSlideTaxRateClergy()>
+										&nbsp;<span id=spanTaxRateClergy>0</span>%
+										<tooltip>Tax rate for the clergy.</tooltip>
+									</li><li>
+										<img width=16px height=16px src=resources/common.png alt=Commoners>
+										<input id=slideTaxRateCommon type=range min=0 max=100 step=1 value=10 onchange=handleSlideTaxRateCommon()>
+										&nbsp;<span id=spanTaxRateCommon>10</span>%
+										<tooltip>Tax rate for the commoners.</tooltip>
+									</li><li>
+										<hr>
+									</li><li><h3><u>Finance</u></h3></li>
+									<li>Current&nbsp;loans:&nbsp;<span loansCurrent>0</span></li>
+									<li>
+										<button id=btnLoanTake  class=button onclick=loanTake() >Take a Loan </button>
+										<button id=btnLoanRepay class=button onclick=loanRepay()>Repay a Loan</button>
+									</li>
+								</ul>
+							</div></td></tr>
+							<tr><td class=pad-top><div class="card mar-right">
+								<h2>
+									<img width=24 height=24 src=resources/overview.png>&nbsp;
+									Overview
+								</h2>
+								<ul>
+									<li>Year:&nbsp;<span id=spanYearCurrent>1700</span></li>
+									<li>Turn:&nbsp;<span id=spanTurnCount>0</span></li>
+									<li>Population:&nbsp;<span id=spanPopulationTotal>21000000</span></li>
+								</ul>
+							</div></td></tr>
 						</table>
-					</div></td></tr>
-					<tr><td class=pad-top><div class="card mar-right">
-						<h2>
-							<img width=24 height=24 src=resources/pna.png>&nbsp;
-							Policies&nbsp;&amp;&nbsp;Actions
-						</h2>
-						<ul>
-							<li><h3><u>Taxes</u></h3></li>
-							<li>
-								<img width=16px height=16px src=resources/nobles.png alt=Nobility>
-								<input id=slideTaxRateNobles type=range min=0 max=100 step=1 value=10 onchange=handleSlideTaxRateNobles()>
-								&nbsp;<span id=spanTaxRateNobles>10</span>%
-								<tooltip>Tax rate for the nobility.</tooltip>
-							</li><li>
-								<img width=16px height=16px src=resources/clergy.png alt=Clergy>
-								<input id=slideTaxRateClergy type=range min=0 max=100 step=1 value=10 onchange=handleSlideTaxRateClergy()>
-								&nbsp;<span id=spanTaxRateClergy>0</span>%
-								<tooltip>Tax rate for the clergy.</tooltip>
-							</li><li>
-								<img width=16px height=16px src=resources/common.png alt=Commoners>
-								<input id=slideTaxRateCommon type=range min=0 max=100 step=1 value=10 onchange=handleSlideTaxRateCommon()>
-								&nbsp;<span id=spanTaxRateCommon>10</span>%
-								<tooltip>Tax rate for the commoners.</tooltip>
-							</li><li>
-								<hr>
-							</li><li><h3><u>Finance</u></h3></li>
-							<li>Current&nbsp;loans:&nbsp;<span loansCurrent>0</span></li>
-							<li>
-								<button id=btnLoanTake  class=button onclick=loanTake() >Take a Loan </button>
-								<button id=btnLoanRepay class=button onclick=loanRepay()>Repay a Loan</button>
-							</li>
-						</ul>
-					</div></td></tr>
-					<tr><td class=pad-top><div class="card mar-right">
-						<h2>
-							<img width=24 height=24 src=resources/overview.png>&nbsp;
-							Overview
-						</h2>
-						<ul>
-							<li>Year:&nbsp;<span id=spanYearCurrent>1700</span></li>
-							<li>Turn:&nbsp;<span id=spanTurnCount>0</span></li>
-							<li>Population:&nbsp;<span id=spanPopulationTotal>21000000</span></li>
-						</ul>
-					</div></td></tr>
-				</table></td><td><table>
-					<tr><td class=pad-top><div class="card mar-right">
+					</td></tr><tr><td class=pad-top><div class="card mar-right">
 						<h2>
 							<img width=24 height=24 src=resources/accounting.png>&nbsp;
 							Accounting
