@@ -1,12 +1,12 @@
 /*   V A R I A B L E S   */
 *:root {
-	--bg-default: #e0d2a9; /*https://en.wikipedia.org/wiki/Gold_%28color%29#Metallic_gold*/;
-	--bg-dark:    #c09d31; /*https://en.wikipedia.org/wiki/Gold_%28color%29#Metallic_gold*/
-	--bg-link:    #0076c0; /*https://en.wikipedia.org/wiki/Azure_%28color%29#French_blue*/
-	--bg-visited: #c00372; /*https://en.wikipedia.org/wiki/Tyrian_purple*/
-	--fg-default: #403410; /*https://en.wikipedia.org/wiki/Gold_%28color%29#Metallic_gold*/
-	--fg-link:    #002740; /*https://en.wikipedia.org/wiki/Azure_%28color%29#French_blue*/
-	--fg-visited: #400126; /*https://en.wikipedia.org/wiki/Tyrian_purple*/
+	--bg-default: #e0d2a9c0; /*https://en.wikipedia.org/wiki/Gold_%28color%29#Metallic_gold*/;
+	--bg-dark:    #c09d31ff; /*https://en.wikipedia.org/wiki/Gold_%28color%29#Metallic_gold*/
+	--bg-link:    #0076c0ff; /*https://en.wikipedia.org/wiki/Azure_%28color%29#French_blue*/
+	--bg-visited: #c00372ff; /*https://en.wikipedia.org/wiki/Tyrian_purple*/
+	--fg-default: #403410ff; /*https://en.wikipedia.org/wiki/Gold_%28color%29#Metallic_gold*/
+	--fg-link:    #002740ff; /*https://en.wikipedia.org/wiki/Azure_%28color%29#French_blue*/
+	--fg-visited: #400126ff; /*https://en.wikipedia.org/wiki/Tyrian_purple*/
 	--font-sans:  sans-serif;
 	--font-serif: serif;
 	--font-mono:  monospace;
@@ -20,7 +20,7 @@
 	--pad-half-neg:    -8px;
 	--pad-quarter:      4px;
 	--pad-quarter-neg: -4px;
-	--shadow: #40341044;
+	--shadow: #40341040;
 }
 
 /*   D E F A U L T S   */
