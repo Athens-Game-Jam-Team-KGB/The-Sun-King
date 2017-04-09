@@ -16,8 +16,24 @@ function updateTxtEvt() {
 			document.getElementById("evtTxt").innerHTML = "A comet has brightened your country's sky";
 		}
 		else if(idEvt == 3){
-			document.getElementById("evtTxt").innerHTML = "The Clergymen demanded to enforce god on nobility, the organization is worried that the nobility might cause great sin with all their wealth.";
+			document.getElementById("evtTxt").innerHTML = "The Clergymen demanded to enforce god on nobility, the organization is worried that the nobility might cause great sin with all their wealth";
 		}
+		else if(idEvt == 4){
+			document.getElementById("evtTxt").innerHTML = "A colony is rebelling against your empire, this could make you lose support of nobles if you don't do anything";
+		}
+		else if(idEvt == 5){
+			document.getElementById("evtTxt").innerHTML = "Explorers have discovered a mine that could contain gold";
+		}
+		else if(idEvt == 6){
+			document.getElementById("evtTxt").innerHTML = "There is a shortage of worker in the factory industry, a politician has proposed to put women into work for cheap price, the clergy believe women should stay at home";
+		}
+		else if(idEvt == 7){
+			document.getElementById("evtTxt").innerHTML = "A group of commoners have become upset, claiming a noble killed one of them with his carriage, and are demanding justice. The noble denies this and requests help to control the angry mob";
+		}
+		else if(idEvt == 8){
+			document.getElementById("evtTxt").innerHTML = "There are plans to reduce the land held by several churches have been halted by extreme opposition from the Clergy, claiming that the land is necessary to survival of the churches. However, the nobles in the areas near the churches say that they would be able to put the land to much greater use";
+		}
+		
 		updateBtnTxt1();
 		updateBtnTxt2();
 		updateControls();
@@ -82,6 +98,88 @@ function updateBtnTxt1(){
 			document.getElementById("btnEvt1").innerHTML = "Bah, screw the church, Take their belongings and give to the rich";
 		}
 	}
+	
+	//Cost of war event
+	else if(idEvt == 4){
+		idOp1 = Math.floor(Math.random() * 4);
+		while(idOp1 < 1){
+			idOp1 = Math.floor(Math.random() * 4);
+		}
+		if(idOp1 == 1){
+			document.getElementById("btnEvt1").innerHTML = "Send soldiers to that colony, force the commoners to join the army";
+		}
+		else if(idOp1 == 2){
+			document.getElementById("btnEvt1").innerHTML = "Do nothing, let the colony rot to death";
+		}
+		else if(idOp1 == 3){
+			document.getElementById("btnEvt1").innerHTML = "Use propoganda to recruit soldiers in the name of god";
+		}
+	}
+	
+	//Gold mine event
+	else if(idEvt == 5){
+		idOp1 = Math.floor(Math.random() * 3);
+		while(idOp1 < 1){
+			idOp1 = Math.floor(Math.random() * 3);
+		}
+		if(idOp1 == 1){
+			document.getElementById("btnEvt1").innerHTML = "Do nothing, ignore the mine";
+		}
+		else if(idOp1 == 2){
+			document.getElementById("btnEvt1").innerHTML = "You may give tax breaks for the wealthy to hekp them establish the mine(50% chance to find gold)";
+		}
+	}
+	
+	//Women in the factory event
+	else if(idEvt == 6){
+		idOp1 = Math.floor(Math.random() * 4);
+		while(idOp1 < 1){
+			idOp1 = Math.floor(Math.random() * 4);
+		}
+		if(idOp1 == 1){
+			document.getElementById("btnEvt1").innerHTML = "Wealth comes before god and there is an opportunity that factories can't miss";
+		}
+		else if(idOp1 == 2){
+			document.getElementById("btnEvt1").innerHTML = "Women should not work in the factories, they should stay at home instead";
+		}
+		else if(idOp1 == 3){
+			document.getElementById("btnEvt1").innerHTML = "Terrible idea! Off with his head!" ;
+		}
+	}
+	
+	//Noble Murder Event
+	else if(idEvt == 7){
+		idOp1 = Math.floor(Math.random() * 4);
+		while(idOp1 < 1){
+			idOp1 = Math.floor(Math.random() * 4);
+		}
+		if(idOp1 == 1){
+			document.getElementById("btnEvt1").innerHTML = "Arrest the noble and put him on trial";
+		}
+		else if(idOp1 == 2){
+			document.getElementById("btnEvt1").innerHTML = "Send in troops to subdue the commoners";
+		}
+		else if(idOp1 == 3){
+			document.getElementById("btnEvt1").innerHTML = "Order the noble to pay the commoners" ;
+		}
+	}
+	
+	//Land Debate Event
+	else if(idEvt == 8){
+		idOp1 = Math.floor(Math.random() * 4);
+		while(idOp1 < 1){
+			idOp1 = Math.floor(Math.random() * 4);
+		}
+		if(idOp1 == 1){
+			document.getElementById("btnEvt1").innerHTML = "Continue the plans";
+		}
+		else if(idOp1 == 2){
+			document.getElementById("btnEvt1").innerHTML = "Reduce the amount of land taken from the churches";
+		}
+		else if(idOp1 == 3){
+			document.getElementById("btnEvt1").innerHTML = "Cancel the plans" ;
+		}
+	}
 }
 
 function updateBtnTxt2(){
@@ -140,6 +238,88 @@ function updateBtnTxt2(){
 			document.getElementById("btnEvt2").innerHTML = "Bah, screw the church, Take their belongings and give to the rich";
 		}
 	}
+	
+	//Cost of war event
+	else if(idEvt == 4){
+		idOp2 = Math.floor(Math.random() * 4);
+		while(idOp2 == idOp1 || idOp2 < 1){
+			idOp2 = Math.floor(Math.random() * 4);
+		}
+		if(idOp2 == 1){
+			document.getElementById("btnEvt2").innerHTML = "Send soldiers to that colony, force the commoners to join the army";
+		}
+		else if(idOp2 == 2){
+			document.getElementById("btnEvt2").innerHTML = "Do nothing, let the colony rot to death";
+		}
+		else if(idOp2 == 3){
+			document.getElementById("btnEvt2").innerHTML = "Use propoganda to recruit soldiers in the name of god";
+		}
+	}
+	
+	//Gold mine event
+	else if(idEvt == 5){
+		idOp2 = Math.floor(Math.random() * 3);
+		while(idOp2 == idOp1 || idOp2 < 1){
+			idOp2 = Math.floor(Math.random() * 3);
+		}
+		if(idOp2 == 1){
+			document.getElementById("btnEvt2").innerHTML = "Do nothing, ignore the mine";
+		}
+		else if(idOp2 == 2){
+			document.getElementById("btnEvt2").innerHTML = "You may give tax breaks for the wealthy to hekp them establish the mine(50% chance to find gold)";
+		}
+	}
+	
+	//Women in the factory event
+	else if(idEvt == 6){
+		idOp2 = Math.floor(Math.random() * 4);
+		while(idOp2 == idOp1 || idOp2 < 1){
+			idOp2 = Math.floor(Math.random() * 4);
+		}
+		if(idOp2 == 1){
+			document.getElementById("btnEvt2").innerHTML = "Wealth comes before god and there is an opportunity that factories can't miss";
+		}
+		else if(idOp2 == 2){
+			document.getElementById("btnEvt2").innerHTML = "Women should not work in the factories, they should stay at home instead";
+		}
+		else if(idOp2 == 3){
+			document.getElementById("btnEvt2").innerHTML = "Terrible idea! Off with his head!" ;
+		}
+	}
+	
+	//Noble Murder Event
+	else if(idEvt == 7){
+		idOp2 = Math.floor(Math.random() * 4);
+		while(idOp2 == idOp1 || idOp2 < 1){
+			idOp2 = Math.floor(Math.random() * 4);
+		}
+		if(idOp2 == 1){
+			document.getElementById("btnEvt2").innerHTML = "Arrest the noble and put him on trial";
+		}
+		else if(idOp2 == 2){
+			document.getElementById("btnEvt2").innerHTML = "Send in troops to subdue the commoners";
+		}
+		else if(idOp2 == 3){
+			document.getElementById("btnEvt2").innerHTML = "Order the noble to pay the commoners" ;
+		}
+	}
+	
+	//Land Debate Event
+	else if(idEvt == 8){
+		idOp2 = Math.floor(Math.random() * 4);
+		while(idOp2 == idOp1 || idOp1 < 1){
+			idOp2 = Math.floor(Math.random() * 4);
+		}
+		if(idOp2 == 1){
+			document.getElementById("btnEvt2").innerHTML = "Continue the plans";
+		}
+		else if(idOp2 == 2){
+			document.getElementById("btnEvt2").innerHTML = "Reduce the amount of land taken from the churches";
+		}
+		else if(idOp2 == 3){
+			document.getElementById("btnEvt2").innerHTML = "Cancel the plans" ;
+		}
+	}
 }
 
 function handleBtnEvt1() {
@@ -162,6 +342,7 @@ function handleBtnEvt1() {
 			}
 			else if(idOp1 == 4){
 				//Neutral Option
+				outlayEvt -= 100000;
 			}
 			else if(idOp1 == 5){
 				//Commoner Opinion go up by 5%
@@ -193,6 +374,85 @@ function handleBtnEvt1() {
 				approvalClergy -= .15;
 			}
 		}
+		
+		else if(idEvt == 4){
+			if(idOp1 == 1){
+				approvalNobles += .15;
+				approvalCommon -= .05;
+			}
+			else if(idOp1 == 2){
+				approvalNobles -= .1;
+			}
+			else if(idOp1 == 3){
+				approvalNobles += .05;
+				approvalClergy -= .05;
+			}
+		}
+		
+		else if(idEvt == 5){
+			if(idOp1 == 1){
+				//Neutral
+			}
+			else if(idOp1 == 2){
+				approvalNobles += .05;
+				approvalCommon -= .1;
+				
+				var gold = Math.floor(Math.random() * 4);
+				if(gold > 1){
+					approvalNobles += .1;
+					approvalCommon += .2;
+					outlayEvt += 100000000   
+				}
+				else{
+					approvalCommon -= .05;
+				}
+			}
+		}
+		
+		else if(idEvt == 6){
+			if(idOp1 == 1){
+				approvalNobles += .05;
+				approvalCommon -= .05;
+				approvalClergy -= .05;
+			}
+			else if(idOp1 == 2){
+				approvalNobles -= .1;
+				approvalClergy += .05;
+			}
+			else if(idOp1 == 3){
+				approvalNobles -= .05;
+				approvalClergy += .1;
+			}
+		}
+		
+		else if(idEvt == 7){
+			if(idOp1 == 1){
+				approvalNobles -= .1;
+				approvalCommon += .1;
+			}
+			else if(idOp1 == 2){
+				approvalNobles += .1;
+				approvalClergy -= .1;
+			}
+			else if(idOp1 == 3){
+				approvalNobles -= .05;
+				approvalClergy += .05;
+			}
+		}
+		
+		else if(idEvt == 8){
+			if(idOp1 == 1){
+				approvalNobles += .1;
+				approvalClergy -= .1;
+			}
+			else if(idOp1 == 2){
+				approvalClergy += .05;
+			}
+			else if(idOp1 == 3){
+				approvalNobles -= .1;
+				approvalClergy += .1;
+			}
+		}
 		updateControls();
 }
 
@@ -216,6 +476,7 @@ function handleBtnEvt2() {
 			}
 			else if(idOp2 == 4){
 				//Neutral Option
+				outlayEvt -= 100000;
 			}
 			else if(idOp2 == 5){
 				//Commoner Opinion go up by 5%
@@ -251,11 +512,90 @@ function handleBtnEvt2() {
 				approvalClergy += .1;
 			}
 			else if(idOp2 == 2){
-				approvalClergy += .05;
+				approvalClergy -= .05;
 			}
 			else if(idOp2 == 3){
 				approvalNobles += .1;
 				approvalClergy -= .15;
+			}
+		}
+		
+		else if(idEvt == 4){
+			if(idOp2 == 1){
+				approvalNobles += .15;
+				approvalCommon -= .1;
+			}
+			else if(idOp2 == 2){
+				approvalNobles -= .1;
+			}
+			else if(idOp2 == 3){
+				approvalNobles += .05;
+				approvalClergy -= .05;
+			}
+		}
+		
+		else if(idEvt == 5){
+			if(idOp2 == 1){
+				//Neutral
+			}
+			else if(idOp2 == 2){
+				approvalNobles += .05;
+				approvalCommon -= .1;
+				
+				var gold = Math.floor(Math.random() * 4);
+				if(gold > 1){
+					approvalNobles += .1;
+					approvalCommon += .2;
+					outlayEvt += 1000000000   
+				}
+				else{
+					approvalCommon -= .05;
+				}
+			}
+		}
+		
+		else if(idEvt == 6){
+			if(idOp2 == 1){
+				approvalNobles += .05;
+				approvalCommon -= .05;
+				approvalClergy -= .05;
+			}
+			else if(idOp2 == 2){
+				approvalNobles -= .1;
+				approvalClergy += .05;
+			}
+			else if(idOp2 == 3){
+				approvalNobles -= .05;
+				approvalClergy += .1;
+			}
+		}
+		
+		else if(idEvt == 7){
+			if(idOp2 == 1){
+				approvalNobles -= .1;
+				approvalCommon += .1;
+			}
+			else if(idOp2 == 2){
+				approvalNobles += .1;
+				approvalClergy -= .1;
+			}
+			else if(idOp2 == 3){
+				approvalNobles -= .05;
+				approvalClergy += .05;
+			}
+		}
+		
+		else if(idEvt == 8){
+			if(idOp2 == 1){
+				approvalNobles += .1;
+				approvalClergy -= .1;
+			}
+			else if(idOp2 == 2){
+				approvalClergy += .05;
+			}
+			else if(idOp2 == 3){
+				approvalNobles -= .1;
+				approvalClergy += .1;
 			}
 		}
 		updateControls();
