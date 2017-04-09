@@ -134,9 +134,6 @@ img {
 s {
 	text-decoration: line-through;
 }
-table {
-	margin: 0px auto 0px auto;
-}
 tooltip {
 	display: none;
 }
@@ -275,7 +272,7 @@ u {
 	float: right !important;
 }
 .centered {
-	margin: 0px auto 0px auto;
+	margin: 0px auto 0px auto !important;
 }
 
 /*   O T H E R   */
