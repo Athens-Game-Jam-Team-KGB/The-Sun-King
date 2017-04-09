@@ -34,7 +34,7 @@ var   treasuryCurrent;
 var   treasuryFuture;
 const corruptRateNobles = 1.5;
 const corruptRateClergy = 1.0;
-const corruptRateCommon = 0.5;
+const corruptRateCommon = 1.0;
 var   outlayCorrupt;
 var   outlayEvt;
 var   outlayInterestTotal;
@@ -85,8 +85,8 @@ function init() {
 	document.getElementById("slideTaxRateNobles").value = 10;
 //	document.getElementById("slideTaxRateClergy").value = 10;
 	document.getElementById("slideTaxRateCommon").value = 10;
-	document.getElementById("divGame").style.display = "block";
-	document.getElementById("btnGame").style.display = "block";
+	document.getElementById("divGame").style.display = "inline";
+	document.getElementById("btnGame").style.display = "inline";
 	document.getElementById("divHelp").style.display = "none";
 	document.getElementById("btnHelp").style.display = "none";
 	document.getElementById("divGameOver").style.display = "none";
@@ -181,9 +181,9 @@ function updateEcon() {
 	taxAmtCommon = taxRateCommon * incomeCommon * populationCommon;
 	taxAmtTotal = taxAmtNobles + taxAmtClergy + taxAmtCommon;
 	receiptTotal = taxAmtTotal + receiptEvt;
-	outlayCorrupt = corruptRateNobles * (1 - approvalNobles) * taxAmtNobles * 2
-		      + corruptRateClergy * (1 - approvalClergy) * taxAmtClergy * 2
-		      + corruptRateCommon * (1 - approvalCommon) * taxAmtCommon * 2;
+	outlayCorrupt = corruptRateNobles * (1 - approvalNobles) * taxAmtNobles
+		      + corruptRateClergy * (1 - approvalClergy) * taxAmtClergy
+		      + corruptRateCommon * (1 - approvalCommon) * taxAmtCommon;
 	outlayInterest = loanCount * loanAmt * loanInterestRate;
 	outlayTotal = outlayInterest + outlayEvt + outlayCorrupt;
 	netChange = receiptTotal - outlayTotal;
