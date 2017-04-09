@@ -116,6 +116,15 @@ h3 {
 h4 h5 h6 {
 	font-weight: bold;
 }
+hr {
+	display: block;
+	margin-top: var(--pad-quarter);
+	margin-bottom: var(--pad-quarter);
+	margin-left: auto;
+	margin-right: auto;
+	border-style: inset;
+	border-width: 1px;
+}
 i {
 	font-style: italic;
 }
