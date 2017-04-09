@@ -3,13 +3,20 @@
 
 function genIdEvt() {
 	idEvt = Math.floor(Math.random() * countEvt);
-	
-	while(idEvt < 1)
+	while(idEvt >= countEvt) {
 		idEvt = Math.floor(Math.random() * countEvt);
+		switch(idEvt) {
+			case 21:
+			case 22:
+			idEvt = countEvt;
+		}
+	}
 }
 
-function updateTxtEvt() {
-		if(idEvt == 1){
+function updateTxtEvt(){ 
+		if(idEvt == 0){
+			document.getElementById("evtTxt").innerHTML = "In a foolish decision of faith over economy, a neighboring country banished all protestants living on their land, they want to settle in our land";
+		} else if(idEvt == 1){
 			document.getElementById("evtTxt").innerHTML = "Commoner rebel against you due to extreme weather hurting crop yield";
 		}
 		else if(idEvt == 2){
@@ -227,7 +234,7 @@ function updateBtnTxt1(){
 		}
 	}
 	
-	//Birthday event
+	//Wanted Criminal Event
 	else if(idEvt == 11){
 		idOp1 = Math.floor(Math.random() * 4);
 		while(idOp1 < 1){
@@ -241,6 +248,23 @@ function updateBtnTxt1(){
 		}
 		else if(idOp1 == 3){
 			document.getElementById("btnEvt1").innerHTML = "Your heir gets assasinated due to leaked information";
+		}
+	}
+	
+	//Protestant Event
+	else if(idEvt == 0){
+		idOp1 = Math.floor(Math.random() * 4);
+		while(idOp1 < 1){
+			idOp1 = Math.floor(Math.random() * 4);
+		}
+		if(idOp1 == 1){
+			document.getElementById("btnEvt1").innerHTML = "Let them settle in";
+		}
+		else if(idOp1 == 2){
+			document.getElementById("btnEvt1").innerHTML = "Drive them away";
+		}
+		else if(idOp1 == 3){
+			document.getElementById("btnEvt1").innerHTML = "Accept them temporarily";
 		}
 	}
 }
@@ -421,6 +445,7 @@ function updateBtnTxt2(){
 		}
 	}
 	
+	//Wanted Criminal Event
 	else if(idEvt == 11){
 		idOp2 = Math.floor(Math.random() * 4);
 		while(idOp2 == idOp1 || idOp2 < 1){
@@ -434,6 +459,23 @@ function updateBtnTxt2(){
 		}
 		else if(idOp2 == 3){
 			document.getElementById("btnEvt2").innerHTML = "Your heir gets assasinated due to leaked information";
+		}
+	}
+	
+	//Protestant Event
+	else if(idEvt == 0){
+		idOp2 = Math.floor(Math.random() * 4);
+		while(idOp2 == idOp1 || idOp2 < 1){
+			idOp2 = Math.floor(Math.random() * 4);
+		}
+		if(idOp2 == 1){
+			document.getElementById("btnEvt2").innerHTML = "Let them settle in";
+		}
+		else if(idOp2 == 2){
+			document.getElementById("btnEvt2").innerHTML = "Drive them away";
+		}
+		else if(idOp2 == 3){
+			document.getElementById("btnEvt2").innerHTML = "Accept them temporarily";
 		}
 	}
 }
@@ -618,6 +660,21 @@ function handleBtnEvt1() {
 			else if(idOp1 == 3){
 				approvalNobles -= .15;
 				approvalCommon -= .05;
+				approvalClergy -= .05;
+			}
+		}
+		
+				
+		else if(idEvt == 0){
+			if(idOp1 == 1){
+				approvalNobles += .05;
+				approvalClergy -= .1;
+			}
+			else if(idOp1 == 2){
+				approvalNobles -= .05;
+				approvalClergy += .1;
+			}
+			else if(idOp1 == 3){
 				approvalClergy -= .05;
 			}
 		}
@@ -815,6 +872,20 @@ function handleBtnEvt2() {
 			else if(idOp1 == 3){
 				approvalNobles -= .15;
 				approvalCommon -= .05;
+				approvalClergy -= .05;
+			}
+		}
+		
+		else if(idEvt == 0){
+			if(idOp1 == 1){
+				approvalNobles += .05;
+				approvalClergy -= .1;
+			}
+			else if(idOp1 == 2){
+				approvalNobles -= .05;
+				approvalClergy += .1;
+			}
+			else if(idOp1 == 3){
 				approvalClergy -= .05;
 			}
 		}
