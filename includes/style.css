@@ -117,7 +117,6 @@ h4 h5 h6 {
 	font-weight: bold;
 }
 hr {
-	border-style: inset;
 	border-width: 1px solid var(--fg-default);
 	display: block;
 	margin-top: var(--pad-quarter);
@@ -258,6 +257,12 @@ u {
 	list-style: circle inside !important;
 	padding: 0px 0px 0px 1px !important;
 	overflow-x: visible !important;
+}
+.text-align-left * {
+	text-align: left !important;
+}
+.text-align-center * {
+	text-align: center !important;
 }
 .text-align-right * {
 	text-align: right !important;
