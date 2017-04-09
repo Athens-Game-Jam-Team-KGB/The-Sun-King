@@ -23,7 +23,7 @@
 			<tr><td class=pad-top colspan=2>
 				<div class="card mar-hor">
 					<h1 class=float-left>
-						<img width=48 height=48 src=resources/coa.png>&nbsp;
+						<img width=32 height=32 src=resources/coa.png>&nbsp;
 						The&nbsp;Sun&nbsp;King
 					</h1>
 					<span class=float-right>
@@ -60,13 +60,12 @@
 								<img width=24px height=24px src=resources/nobles.png alt=Nobility>
 								<input id=slideTaxRateNobles type=range min=0 max=100 step=1 value=10 onchange=handleSlideTaxRateNobles()>
 								&nbsp;<span id=spanTaxRateNobles>10</span>%
-							</li>
-							<!--<li>
+								<tooltip>Tax rate for the nobility.</tooltip>
+							</li><li>
 								<img width=24px height=24px src=resources/clergy.png alt=Clergy>
 								<input id=slideTaxRateClergy type=range min=0 max=100 step=1 value=10 onchange=handleSlideTaxRateClergy()>
-								&nbsp;<span id=spanTaxRateClergy>10</span>%
-							</li>-->
-							<li>
+								&nbsp;<span id=spanTaxRateClergy>0</span>%
+							</li><li>
 								<img width=24px height=24px src=resources/common.png alt=Commoners>
 								<input id=slideTaxRateCommon type=range min=0 max=100 step=1 value=10 onchange=handleSlideTaxRateCommon()>
 								&nbsp;<span id=spanTaxRateCommon>10</span>%
@@ -115,10 +114,10 @@
 							</tr><tr>
 								<td>Noble&nbsp;Tax:&nbsp;</td>
 								<td>£<span id=spanTaxAmtNobles >0</span></td>
-							</tr><!--<tr>
+							</tr><tr>
 								<td>Clergy&nbsp;Tax:&nbsp;</td>
 								<td>£<span id=spanTaxAmtClergy>0</span></td>
-							</tr>--><tr>
+							</tr><tr>
 								<td>Commoner&nbsp;Tax:&nbsp;</td>
 								<td>£<span id=spanTaxAmtCommon>0</span></td>
 							</tr><tr>
