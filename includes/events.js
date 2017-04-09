@@ -3,14 +3,9 @@
 
 function genIdEvt() {
 	idEvt = Math.floor(Math.random() * countEvt);
-	while(idEvt >= countEvt) {
+	/*if(idEvt == 20 || idEvt == 21 || idEvt == 22 || idEvt == 23){
 		idEvt = Math.floor(Math.random() * countEvt);
-		switch(idEvt) {
-			case 21:
-			case 22:
-			idEvt = countEvt;
-		}
-	}
+	}*/
 }
 
 function updateTxtEvt(){ 
@@ -49,7 +44,9 @@ function updateTxtEvt(){
 		else if(idEvt == 11){
 			document.getElementById("evtTxt").innerHTML = "A wanted criminal has escaped to a neighboring country with classified intel";
 		}
-		
+		else if(idEvt == 12){
+			document.getElementById("evtTxt").innerHTML = "The Clergy believe that a small group of their members are converting to Protestantism and are demanding that they be exiled for herecy. However, the commoners strongly oppose this because of the aid these members provide their communities";
+		}
 		updateBtnTxt1();
 		updateBtnTxt2();
 		updateControls();
@@ -77,9 +74,6 @@ function updateBtnTxt1(){
 			document.getElementById("btnEvt1").innerHTML = "Partially subsidize the price of bread for the people";
 		}
 		else if(idOp1 == 5){
-			document.getElementById("btnEvt1").innerHTML = "Go to the food storage and hand out food to the citizens";
-		}
-		else{
 			document.getElementById("btnEvt1").innerHTML = "Go to the food storage and hand out food to the citizens";
 		}
 	}
@@ -265,6 +259,29 @@ function updateBtnTxt1(){
 		}
 		else if(idOp1 == 3){
 			document.getElementById("btnEvt1").innerHTML = "Accept them temporarily";
+		}
+	}
+	
+	//Protestant Converting Event
+	else if(idEvt == 12){
+		idOp1 = Math.floor(Math.random() * 6);
+		while(idOp1 < 1){
+			idOp1 = Math.floor(Math.random() * 6);
+		}
+		if(idOp1 == 1){
+			document.getElementById("btnEvt1").innerHTML = "Execute the clergymen for herecy";
+		}
+		else if(idOp1 == 2){
+			document.getElementById("btnEvt1").innerHTML = "Exile the clergymen";
+		}
+		else if(idOp1 == 3){
+			document.getElementById("btnEvt1").innerHTML = "Pay the Clergy to keep quiet";
+		}
+		else if(idOp1 == 4){
+			document.getElementById("btnEvt1").innerHTML = "Send in troops to subdue the commoners and arrest the heretic clergymen";
+		}
+		else if(idOp1 == 5){
+			document.getElementById("btnEvt1").innerHTML = "Give funds to the clergy";
 		}
 	}
 }
@@ -478,12 +495,35 @@ function updateBtnTxt2(){
 			document.getElementById("btnEvt2").innerHTML = "Accept them temporarily";
 		}
 	}
+	
+	//Protestant Converting Event
+	else if(idEvt == 12){
+		idOp2 = Math.floor(Math.random() * 6);
+		while(idOp2 == idOp1 || idOp2 < 1){
+			idOp2 = Math.floor(Math.random() * 6);
+		}
+		if(idOp2 == 1){
+			document.getElementById("btnEvt2").innerHTML = "Execute the clergymen for herecy";
+		}
+		else if(idOp2 == 2){
+			document.getElementById("btnEvt2").innerHTML = "Exile the clergymen";
+		}
+		else if(idOp2 == 3){
+			document.getElementById("btnEvt2").innerHTML = "Pay the Clergy to keep quiet";
+		}
+		else if(idOp2 == 4){
+			document.getElementById("btnEvt2").innerHTML = "Send in troops to subdue the commoners and arrest the heretic clergymen";
+		}
+		else if(idOp2 == 5){
+			document.getElementById("btnEvt2").innerHTML = "Give funds to the clergy";
+		}
+	}
 }
 
 function handleBtnEvt1() {
-		document.getElementById("btnTurn").style.display = "inline";
+		document.getElementById("btnTurn").style.display = "initial";
 		document.getElementById("ulBtnEvt").style.display = "none";
-		document.getElementById("liEvtOpt").style.display = "inline";
+		document.getElementById("liEvtOpt").style.display = "initial";
 		document.getElementById("spanEvtOpt").innerHTML = document.getElementById("btnEvt1").innerHTML
 		if(idEvt == 1){
 			if(idOp1 == 1){
@@ -678,13 +718,33 @@ function handleBtnEvt1() {
 				approvalClergy -= .05;
 			}
 		}
+		
+		else if(idEvt == 12){
+			if(idOp1 == 1){
+				approvalClergy -= .1;
+			}
+			else if(idOp1 == 2){
+				approvalNobles += .05;
+				approvalClergy -= .1;
+			}
+			else if(idOp1 == 3){
+				//Neutral
+			}
+			else if(idOp1 == 4){
+				approvalNobles -= .05;
+				approvalClergy += .05;
+			}
+			else if(idOp1 == 5){
+				approvalCommon += .05
+			}
+		}
 		updateControls();
 }
 
 function handleBtnEvt2() {
-		document.getElementById("btnTurn").style.display = "inline";
+		document.getElementById("btnTurn").style.display = "initial";
 		document.getElementById("ulBtnEvt").style.display = "none";
-		document.getElementById("liEvtOpt").style.display = "inline";
+		document.getElementById("liEvtOpt").style.display = "initial";
 		document.getElementById("spanEvtOpt").innerHTML = document.getElementById("btnEvt2").innerHTML; 
 		if(idEvt == 1){
 			if(idOp2 == 1){
@@ -887,6 +947,26 @@ function handleBtnEvt2() {
 			}
 			else if(idOp1 == 3){
 				approvalClergy -= .05;
+			}
+		}
+		
+		else if(idEvt == 12){
+			if(idOp2 == 1){
+				approvalClergy -= .1;
+			}
+			else if(idOp2 == 2){
+				approvalNobles += .05;
+				approvalClergy -= .1;
+			}
+			else if(idOp2 == 3){
+				//Neutral
+			}
+			else if(idOp2 == 4){
+				approvalNobles -= .05;
+				approvalClergy += .05;
+			}
+			else if(idOp2 == 5){
+				approvalCommon += .05
 			}
 		}
 		updateControls();
