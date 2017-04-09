@@ -107,6 +107,9 @@ i {
 s {
 	text-decoration: line-through;
 }
+tooltip {
+	display: none;
+}
 u {
 	text-decoration: underline;
 }
