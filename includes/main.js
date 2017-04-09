@@ -137,7 +137,7 @@ function updateControls() {
 	document.getElementById("spanTaxAmtClergy").innerHTML = Math.round(taxAmtClergy);
 	document.getElementById("spanTaxAmtCommon").innerHTML = Math.round(taxAmtCommon);
 	document.getElementById("spanTaxAmtTotal").innerHTML = "<b>" + Math.round(taxAmtTotal) + "</b>";
-	document.getElementById("spanReceiptEvt").innerHTML = Math.round(receiptEvt);
+	document.getElementById("spanReceiptEvt").innerHTML = "<b>" + Math.round(receiptEvt) + "</b>";
 	
 	// Update expenses
 	document.getElementById("spanOutlayCorrupt").innerHTML = Math.round(outlayCorrupt);
@@ -150,8 +150,8 @@ function updateControls() {
 	document.getElementById("spanNetChange").innerHTML = "<b>" + Math.round(netChange) + "</b>";
 	
 	// Update treasury
-	document.getElementById("spanTreasuryCurrent").innerHTML = Math.round(treasuryCurrent);
-	document.getElementById("spanTreasuryFuture").innerHTML = Math.round(treasuryFuture);
+	document.getElementById("spanTreasuryCurrent").innerHTML = "<b>" + Math.round(treasuryCurrent) + "</b>";
+	document.getElementById("spanTreasuryFuture").innerHTML = "<b>" + Math.round(treasuryFuture) + "</b>";
 }
 
 function updateEcon() {
