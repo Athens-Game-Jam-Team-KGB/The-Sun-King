@@ -38,10 +38,10 @@ const corruptRateCommon = 1.0;
 var   outlayCorrupt;
 var   outlayEvt;
 var   outlayInterestTotal;
-
+var audio; 
 ////////////////////////////////////////////////////////////////////////////////
 // Main functions
-
+v
 function init() {
 	// Parliamentary variables
 	approvalNobles  = 0.67;
@@ -142,6 +142,7 @@ function handleBtnGame() {
 	document.getElementById("btnGame").style.display = "none";
 }
 
+
 function updateControls() {
 	//Update parliament
 	document.getElementById("spanApprovalNobles").innerHTML = Math.round(approvalNobles * 100);
@@ -188,4 +189,8 @@ function updateEcon() {
 	outlayTotal = outlayInterest + outlayEvt + outlayCorrupt;
 	netChange = receiptTotal - outlayTotal;
 	treasuryFuture = treasuryCurrent + netChange;
+}
+function newAudio() {
+	audio = new Audio('resources/Jean-Philippe_Rameau_-_Gavotte_and_Variations.ogg');
+	audio.play(); 
 }
