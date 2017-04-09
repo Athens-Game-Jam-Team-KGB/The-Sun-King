@@ -39,7 +39,7 @@
 	text-align: justify;
 	text-decoration: none;
 	text-indent: 0px;
-	vertical-align: middle;
+	vertical-align: top;
 	width: auto;
 	z-index: 0;
 }
@@ -113,6 +113,9 @@ h4 h5 h6 {
 }
 i {
 	font-style: italic;
+}
+img {
+	vertical-align: middle;
 }
 s {
 	text-decoration: line-through;
