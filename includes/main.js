@@ -82,8 +82,14 @@ function init() {
 	
 	// Reset UI
 	document.getElementById("slideTaxPercentNobles").value = 10;
-	document.getElementById("slideTaxPercentClergy").value = 10;
+//	document.getElementById("slideTaxPercentClergy").value = 10;
 	document.getElementById("slideTaxPercentCommon").value = 10;
+	document.getElementById("divGame").style.display = "block";
+	document.getElementById("btnGame").style.display = "block";
+	document.getElementById("divHelp").style.display = "none";
+	document.getElementById("btnHelp").style.display = "none";
+	document.getElementById("divGameOver").style.display = "none";
+	document.getElementById("btnGameOver").style.display = "none";
 	
 	// Start the first turn
 	turn();
@@ -115,8 +121,10 @@ function turn() {
 
 function gameOver() {
 	document.getElementById("divGame").style.display = "none";
-	document.getElementById("divGameOver").style.display = "block";
+	document.getElementById("btnGame").style.display = "none";
+	document.getElementById("divHelp").style.display = "none";
 	document.getElementById("btnHelp").style.display = "none";
+	document.getElementById("divGameOver").style.display = "block";
 	document.getElementById("btnGameOver").style.display = "block";
 }
 
