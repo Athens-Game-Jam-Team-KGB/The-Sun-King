@@ -145,9 +145,27 @@ function handleBtnGame() {
 
 function updateControls() {
 	//Update parliament
-	document.getElementById("spanApprovalNobles").innerHTML = Math.round(approvalNobles * 100);
-	document.getElementById("spanApprovalClergy").innerHTML = Math.round(approvalClergy * 100);
-	document.getElementById("spanApprovalCommon").innerHTML = Math.round(approvalCommon * 100);
+	/*if*/ if(approvalNobles > 100) {
+		document.getElementById("spanApprovalNobles").innerHTML = 100;
+	} else if(approvalNobles < 0) {
+		document.getElementById("spanApprovalNobles").innerHTML =   0;
+	} else {
+		document.getElementById("spanApprovalNobles").innerHTML = Math.round(approvalNobles * 100);
+	}
+	/*if*/ if(approvalClergy > 100) {
+		document.getElementById("spanApprovalClergy").innerHTML = 100;
+	} else if(approvalClergy < 0) {
+		document.getElementById("spanApprovalClergy").innerHTML =   0;
+	} else {
+		document.getElementById("spanApprovalClergy").innerHTML = Math.round(approvalClergy * 100);
+	}
+	/*if*/ if(approvalCommon > 100) {
+		document.getElementById("spanApprovalCommon").innerHTML = 100;
+	} else if(approvalCommon < 0) {
+		document.getElementById("spanApprovalCommon").innerHTML =   0;
+	} else {
+		document.getElementById("spanApprovalCommon").innerHTML = Math.round(approvalCommon * 100);
+	}
 	
 	// Update tax sliders
 	document.getElementById("spanTaxRateNobles").innerHTML = Math.round(taxRateNobles * 100);
@@ -177,6 +195,15 @@ function updateControls() {
 }
 
 function updateEcon() {
+	// Validate tax-rates
+	if(taxRateNobles > 100) taxRateNobles = 100;
+	if(taxRateClergy > 100) taxRateClergy = 100;
+	if(taxRateCommon > 100) taxRateCommon = 100;
+	if(taxRateNobles <   0) taxRateNobles =   0;
+	if(taxRateClergy <   0) taxRateClergy =   0;
+	if(taxRateCommon <   0) taxRateCommon =   0;
+	
+	// Calculate economy
 	taxAmtNobles = taxRateNobles * incomeNobles * populationNobles;
 	taxAmtClergy = taxRateClergy * incomeClergy * populationClergy;
 	taxAmtCommon = taxRateCommon * incomeCommon * populationCommon;
