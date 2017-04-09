@@ -106,12 +106,15 @@ button:active {
 }
 h1 {
 	font-size: 150%;
+	font-weight: bold;
 }
 h2 {
 	font-size: 125%;
+	font-weight: bold;
 }
 h3 {
 	font-size: 112.5%;
+	font-weight: bold;
 }
 h4 h5 h6 {
 	font-weight: bold;
