@@ -36,7 +36,7 @@ function loanTake() {
 }
 
 function loanRepay() {
-	treasuryCurrent-= loanAmt + loanAmt * loanInterest;
+	treasuryCurrent-= loanAmt * (1 + loanInterestRate);
 	loanCount--;
 	updateEcon();
 	updateControls();
