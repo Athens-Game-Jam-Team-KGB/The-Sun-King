@@ -38,7 +38,6 @@ const corruptRateCommon = 1.00;
 var   outlayCorrupt;
 var   outlayEvt;
 var   outlayInterestTotal;
-var audio; 
 ////////////////////////////////////////////////////////////////////////////////
 // Main functions
 
@@ -96,6 +95,8 @@ function init() {
 }
 
 function turn() {
+	playClick();
+	
 	// Update demographics
 	populationGrowth = 1.0019; // Between 1600 and 1801, per https://en.wikipedia.org/wiki/Demographics_of_France#Historical_population_figures
 	populationTotal *= populationGrowth; // https://en.wikipedia.org/wiki/List_of_countries_by_population_in_1700
@@ -123,6 +124,8 @@ function turn() {
 }
 
 function gameOver() {
+	var guillotine = new Audio("resources/guillotine.ogg");
+	guillotine.play();
 	document.getElementById("divGame").style.display = "none";
 	document.getElementById("btnGame").style.display = "none";
 	document.getElementById("divHelp").style.display = "none";
@@ -132,6 +135,7 @@ function gameOver() {
 }
 
 function help() {
+	playClick();
 	document.getElementById("divGame").style.display = "none";
 	document.getElementById("divHelp").style.display = "initial";
 	document.getElementById("btnHelp").style.display = "none";
@@ -139,6 +143,7 @@ function help() {
 }
 
 function handleBtnGame() {
+	playClick();
 	document.getElementById("divGame").style.display = "initial";
 	document.getElementById("divHelp").style.display = "none";
 	document.getElementById("btnHelp").style.display = "initial";
@@ -184,22 +189,22 @@ function updateControls() {
 	document.getElementById("spanTaxAmtNobles").innerHTML = Math.round(taxAmtNobles);
 	document.getElementById("spanTaxAmtClergy").innerHTML = Math.round(taxAmtClergy);
 	document.getElementById("spanTaxAmtCommon").innerHTML = Math.round(taxAmtCommon);
-	document.getElementById("spanTaxAmtTotal").innerHTML = "<b>" + Math.round(taxAmtTotal) + "</b>";
-	document.getElementById("spanReceiptEvt").innerHTML = "<b>" + Math.round(receiptEvt) + "</b>";
+	document.getElementById("spanTaxAmtTotal").innerHTML  = "<b>" + Math.round(taxAmtTotal) + "</b>";
+	document.getElementById("spanReceiptEvt").innerHTML   = "<b>" + Math.round(receiptEvt) + "</b>";
 	
 	// Update expenses
-	document.getElementById("spanOutlayCorrupt").innerHTML = Math.round(outlayCorrupt);
+	document.getElementById("spanOutlayCorrupt").innerHTML  = Math.round(outlayCorrupt);
 	document.getElementById("spanOutlayInterest").innerHTML = Math.round(outlayInterest);
-	document.getElementById("spanOutlayEvt").innerHTML = Math.round(outlayEvt);
+	document.getElementById("spanOutlayEvt").innerHTML      = Math.round(outlayEvt);
 	
 	// Update totals
 	document.getElementById("spanReceiptTotal").innerHTML = Math.round(receiptTotal);
-	document.getElementById("spanOutlayTotal").innerHTML = Math.round(outlayTotal);
-	document.getElementById("spanNetChange").innerHTML = "<b>" + Math.round(netChange) + "</b>";
+	document.getElementById("spanOutlayTotal").innerHTML  = Math.round(outlayTotal);
+	document.getElementById("spanNetChange").innerHTML    = "<b>" + Math.round(netChange) + "</b>";
 	
 	// Update treasury
 	document.getElementById("spanTreasuryCurrent").innerHTML = "<b>" + Math.round(treasuryCurrent) + "</b>";
-	document.getElementById("spanTreasuryFuture").innerHTML = "<b>" + Math.round(treasuryFuture) + "</b>";
+	document.getElementById("spanTreasuryFuture").innerHTML  = "<b>" + Math.round(treasuryFuture) + "</b>";
 }
 
 function updateEcon() {
@@ -212,22 +217,27 @@ function updateEcon() {
 	if(taxRateCommon <   0) taxRateCommon =   0;
 	
 	// Calculate economy
-	taxAmtNobles = taxRateNobles * incomeNobles * populationNobles;
-	taxAmtClergy = taxRateClergy * incomeClergy * populationClergy;
-	taxAmtCommon = taxRateCommon * incomeCommon * populationCommon;
-	taxAmtTotal = taxAmtNobles + taxAmtClergy + taxAmtCommon;
-	receiptTotal = taxAmtTotal + receiptEvt;
-	outlayCorrupt = corruptRateNobles * (1 - approvalNobles) * taxAmtNobles
-		      + corruptRateClergy * (1 - approvalClergy) * taxAmtClergy
-		      + corruptRateCommon * (1 - approvalCommon) * taxAmtCommon;
+	taxAmtNobles   = taxRateNobles * incomeNobles * populationNobles;
+	taxAmtClergy   = taxRateClergy * incomeClergy * populationClergy;
+	taxAmtCommon   = taxRateCommon * incomeCommon * populationCommon;
+	taxAmtTotal    = taxAmtNobles  + taxAmtClergy + taxAmtCommon;
+	receiptTotal   = taxAmtTotal   + receiptEvt;
+	outlayCorrupt  = corruptRateNobles   * (1 - approvalNobles) * taxAmtNobles
+		       + corruptRateClergy   * (1 - approvalClergy) * taxAmtClergy
+		       + corruptRateCommon   * (1 - approvalCommon) * taxAmtCommon;
 	outlayInterest = loanCount * loanAmt * loanInterestRate;
-	outlayTotal = outlayInterest + outlayEvt + outlayCorrupt;
-	netChange = receiptTotal - outlayTotal;
+	outlayTotal    = outlayInterest  + outlayEvt + outlayCorrupt;
+	netChange      = receiptTotal    - outlayTotal;
 	treasuryFuture = treasuryCurrent + netChange;
 }
 
 function playMusic() {
-	music = new Audio("resources/music.ogg");
+	var music = new Audio("resources/music.ogg");
 	music.loop = true;
 	music.play();
+}
+
+function playClick() {
+	var click = new Audio("resources/click.ogg");
+	click.play();
 }
