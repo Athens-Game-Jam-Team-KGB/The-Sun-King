@@ -5,6 +5,7 @@ var   approvalNobles;
 
 // Event variables
 const countEvt = 20;
+var turnCount = 0;
 var   idEvt;
 var   idOp1;
 var   idOp2;
@@ -85,8 +86,7 @@ function init() {
 	document.getElementById("slideTaxRateNobles").value = 10;
 	document.getElementById("slideTaxRateClergy").value =  0;
 	document.getElementById("slideTaxRateCommon").value = 10;
-	document.getElementById("divGame1").style.display = "initial";
-	document.getElementById("divGame2").style.display = "initial";
+	document.getElementById("divGame").style.display = "initial";
 	document.getElementById("btnGame").style.display = "none";
 	document.getElementById("divHelp").style.display = "none";
 	document.getElementById("btnHelp").style.display = "initial";
@@ -102,6 +102,10 @@ function newTurn() {
 }
 
 function turn() {
+	//Increment turns
+	turnCount++;
+	
+	document.getElementById("spanTurnCount").innerHTML = turnCount;
 	// Update demographics
 	populationGrowth = 1.0019; // Between 1600 and 1801, per https://en.wikipedia.org/wiki/Demographics_of_France#Historical_population_figures
 	populationTotal *= populationGrowth; // https://en.wikipedia.org/wiki/List_of_countries_by_population_in_1700
@@ -135,11 +139,11 @@ function turn() {
 }
 
 function gameOver() {
+	document.getElementById("spanTurnsReigned").innerHTML = turnCount;
 	var guillotine = new Audio("resources/guillotine.ogg");
 	guillotine.play();
 	document.getElementById("body").style.backgroundImage = "../resources/gameOver.png";
-	document.getElementById("divGame1").style.display = "none";
-	document.getElementById("divGame2").style.display = "none";
+	document.getElementById("divGame").style.display = "none";
 	document.getElementById("btnGame").style.display = "none";
 	document.getElementById("divHelp").style.display = "none";
 	document.getElementById("btnHelp").style.display = "none";
@@ -148,8 +152,7 @@ function gameOver() {
 
 function help() {
 	playClick();
-	document.getElementById("divGame1").style.display = "none";
-	document.getElementById("divGame2").style.display = "none";
+	document.getElementById("divGame").style.display = "none";
 	document.getElementById("divHelp").style.display = "block";
 	document.getElementById("btnHelp").style.display = "none";
 	document.getElementById("btnGame").style.display = "initial";
