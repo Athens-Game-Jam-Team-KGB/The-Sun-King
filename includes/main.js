@@ -123,6 +123,9 @@ function turn() {
 	document.getElementById("btnTurn").style.display = "none";
 	document.getElementById("ulBtnEvt").style.display = "initial";
 	document.getElementById("liEvtOpt").style.display = "none";
+	if(approvalNobles < .25 || approvalClergy < .25 || approvalCommon < .25){
+		gameOver();
+	}
 	genIdEvt();
 	if(treasuryCurrent < 0){
 		idEvt = -1;
@@ -216,10 +219,6 @@ function updateControls() {
 	// Update treasury
 	document.getElementById("spanTreasuryCurrent").innerHTML = "<b>" + Math.round(treasuryCurrent) + "</b>";
 	document.getElementById("spanTreasuryFuture").innerHTML  = "<b>" + Math.round(treasuryFuture) + "</b>";
-	
-	if(approvalNobles < .25 || approvalClergy < .25 || approvalCommon < .25){
-		gameOver();
-	}
 }
 
 function updateEcon() {
