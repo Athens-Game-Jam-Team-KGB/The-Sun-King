@@ -44,3 +44,4 @@ Licenses
   + resources/parliament.png (No Copyright) (source: https://commons.wikimedia.org/wiki/File:Flag_of_France_(XIV-XVI).svg)
   + resources/accounting.png (No Copyright) (source: https://plus.google.com/photos/114955536568171203485/albums/5784841128246103425/5784841128495224082)
   + resources/event.png (CC-BY-SA-4) (self-made)
+  + resources/overview.png (CC-BY-SA-3) (source: https://commons.wikimedia.org/wiki/File:Wooden_hourglass_3.jpg)
