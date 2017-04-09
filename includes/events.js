@@ -7,7 +7,7 @@ function genIdEvt() {
 
 function updateTxtEvt(){ 
 		if(idEvt == -4){
-		
+			
 		}
 		else if(idEvt == -3){
 		
