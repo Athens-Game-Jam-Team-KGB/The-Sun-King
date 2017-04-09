@@ -41,7 +41,7 @@ var   outlayInterestTotal;
 var audio; 
 ////////////////////////////////////////////////////////////////////////////////
 // Main functions
-v
+
 function init() {
 	// Parliamentary variables
 	approvalNobles  = 0.67;
@@ -190,7 +190,9 @@ function updateEcon() {
 	netChange = receiptTotal - outlayTotal;
 	treasuryFuture = treasuryCurrent + netChange;
 }
-function newAudio() {
-	audio = new Audio('resources/Jean-Philippe_Rameau_-_Gavotte_and_Variations.ogg');
-	audio.play(); 
+
+function playAudio() {
+	music = new Audio("resources/Jean-Philippe_Rameau_-_Gavotte_and_Variations.ogg");
+	music.loop = true;
+	music.play();
 }
