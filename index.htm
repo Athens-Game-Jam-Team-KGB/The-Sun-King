@@ -9,15 +9,15 @@
 		<script type=text/javascript src=includes/events.js></script>
 		<script type=text/javascript src=includes/actions.js></script>
 	</head>
-	<body class="centered float-center">
+	<body id=body class="centered float-center">
 		<div id=divHelp class="card mar-full" style=display:none>
 			<h2>Helptext</h2>
-			<p>The helptext goes here.</p>
+			<p>This is a game</p>
 		</div>
 		<div id=divGameOver class="card mar-full" style=display:none>
 			<h2>Game&nbsp;Over</h2>
 			<p>Vive&nbsp;la&nbsp;revolución!</p>
-			<img width=1024 src=resources/gameOver.png alt=Guillotine>
+			<p>Turns&nbsp;Reigned:&nbsp;<span id=spanTurnsReigned>0</span></p>
 		</div>
 		<table id=divGame>
 			<tr><td class=pad-top colspan=2>
