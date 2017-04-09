@@ -33,6 +33,12 @@ function updateTxtEvt() {
 		else if(idEvt == 8){
 			document.getElementById("evtTxt").innerHTML = "There are plans to reduce the land held by several churches have been halted by extreme opposition from the Clergy, claiming that the land is necessary to survival of the churches. However, the nobles in the areas near the churches say that they would be able to put the land to much greater use";
 		}
+		else if(idEvt == 9){
+			document.getElementById("evtTxt").innerHTML = "A neighboring county want to want you to lower your trade restrictions";
+		}
+		else if(idEvt == 10){
+			document.getElementById("evtTxt").innerHTML = "It is your birthday, also a national holiday";
+		}
 		
 		updateBtnTxt1();
 		updateBtnTxt2();
@@ -126,7 +132,7 @@ function updateBtnTxt1(){
 			document.getElementById("btnEvt1").innerHTML = "Do nothing, ignore the mine";
 		}
 		else if(idOp1 == 2){
-			document.getElementById("btnEvt1").innerHTML = "You may give tax breaks for the wealthy to hekp them establish the mine(50% chance to find gold)";
+			document.getElementById("btnEvt1").innerHTML = "You may give tax breaks for the wealthy to help them establish the mine(50% chance to find gold)";
 		}
 	}
 	
@@ -178,6 +184,43 @@ function updateBtnTxt1(){
 		}
 		else if(idOp1 == 3){
 			document.getElementById("btnEvt1").innerHTML = "Cancel the plans" ;
+		}
+	}
+	
+	//Trade event
+	else if(idEvt == 9){
+		idOp1 = Math.floor(Math.random() * 4);
+		while(idOp1 < 1){
+			idOp1 = Math.floor(Math.random() * 4);
+		}
+		if(idOp1 == 1){
+			document.getElementById("btnEvt1").innerHTML = "Raise tariffs";
+		}
+		else if(idOp1 == 2){
+			document.getElementById("btnEvt1").innerHTML = "Do nothing";
+		}
+		else if(idOp1 == 3){
+			document.getElementById("btnEvt1").innerHTML = "Lower tarrifs";
+		}
+	}
+	
+	//Birthday event
+	else if(idEvt == 10){
+		idOp1 = Math.floor(Math.random() * 5);
+		while(idOp1 < 1){
+			idOp1 = Math.floor(Math.random() * 5);
+		}
+		if(idOp1 == 1){
+			document.getElementById("btnEvt1").innerHTML = "Unite the country by giving a national speech";
+		}
+		else if(idOp1 == 2){
+			document.getElementById("btnEvt1").innerHTML = "Throw a lavish party that only the nobles can attend";
+		}
+		else if(idOp1 == 3){
+			document.getElementById("btnEvt1").innerHTML = "Raise taxes on everyone";
+		}
+		else if(idOp1 == 4){
+			document.getElementById("btnEvt1").innerHTML = "Throw a lavish party that only the commoners can attend";
 		}
 	}
 }
@@ -266,7 +309,7 @@ function updateBtnTxt2(){
 			document.getElementById("btnEvt2").innerHTML = "Do nothing, ignore the mine";
 		}
 		else if(idOp2 == 2){
-			document.getElementById("btnEvt2").innerHTML = "You may give tax breaks for the wealthy to hekp them establish the mine(50% chance to find gold)";
+			document.getElementById("btnEvt2").innerHTML = "You may give tax breaks for the wealthy to help them establish the mine(50% chance to find gold)";
 		}
 	}
 	
@@ -320,6 +363,43 @@ function updateBtnTxt2(){
 			document.getElementById("btnEvt2").innerHTML = "Cancel the plans" ;
 		}
 	}
+	
+	//Trade event
+	else if(idEvt == 9){
+		idOp2 = Math.floor(Math.random() * 4);
+		while(idOp2 == idOp1 || idOp2 < 1){
+			idOp2 = Math.floor(Math.random() * 4);
+		}
+		if(idOp2 == 1){
+			document.getElementById("btnEvt2").innerHTML = "Raise tariffs";
+		}
+		else if(idOp2 == 2){
+			document.getElementById("btnEvt2").innerHTML = "Do nothing";
+		}
+		else if(idOp2 == 3){
+			document.getElementById("btnEvt2").innerHTML = "Lower tarrifs";
+		}
+	}
+	
+	//Birthday event
+	else if(idEvt == 10){
+		idOp2 = Math.floor(Math.random() * 5);
+		while(idOp2 == idOp1 || idOp2 < 1){
+			idOp2 = Math.floor(Math.random() * 5);
+		}
+		if(idOp2 == 1){
+			document.getElementById("btnEvt2").innerHTML = "Unite the country by giving a national speech";
+		}
+		else if(idOp2 == 2){
+			document.getElementById("btnEvt2").innerHTML = "Throw a lavish party that only the nobles can attend";
+		}
+		else if(idOp2 == 3){
+			document.getElementById("btnEvt2").innerHTML = "Raise taxes on everyone";
+		}
+		else if(idOp2 == 4){
+			document.getElementById("btnEvt2").innerHTML = "Throw a lavish party that only the commoners can attend";
+		}
+	}
 }
 
 function handleBtnEvt1() {
@@ -335,6 +415,7 @@ function handleBtnEvt1() {
 			else if(idOp1 == 2){
 				//Commoner Opinion drop by 5$
 				approvalCommon -= .05;
+				outlayEvt += 10000000;
 			}
 			else if(idOp1 == 3){
 				//Commoner Opinion drop by 5$
@@ -342,7 +423,7 @@ function handleBtnEvt1() {
 			}
 			else if(idOp1 == 4){
 				//Neutral Option
-				outlayEvt -= 100000;
+				outlayEvt += 100000000;
 			}
 			else if(idOp1 == 5){
 				//Commoner Opinion go up by 5%
@@ -396,12 +477,13 @@ function handleBtnEvt1() {
 			else if(idOp1 == 2){
 				approvalNobles += .05;
 				approvalCommon -= .1;
+				outlayEvt += 30000000;
 				
 				var gold = Math.floor(Math.random() * 4);
 				if(gold > 1){
 					approvalNobles += .1;
 					approvalCommon += .2;
-					outlayEvt += 100000000   
+					receiptEvt += 300000000;   
 				}
 				else{
 					approvalCommon -= .05;
@@ -453,6 +535,40 @@ function handleBtnEvt1() {
 				approvalClergy += .1;
 			}
 		}
+		
+		else if(idEvt == 9){
+			if(idOp1 == 1){
+				approvalNobles += .05;
+				approvalCommon -= .05;
+			}
+			else if(idOp1 == 2){
+				//Neutral
+			}
+			else if(idOp1 == 3){
+				approvalNobles -= .05;
+				approvalCommon += .05;
+			}
+		}
+		
+		else if(idEvt == 10){
+			if(idOp1 == 1){
+				approvalNobles += .05;
+				approvalCommon += .05;
+				approvalClergy += .05;
+			}
+			else if(idOp1 == 2){
+				approvalNobles += .1;
+			}
+			else if(idOp1 == 3){
+				approvalNobles -= .05;
+				approvalCommon -= .05;
+				approvalClergy -= .05;
+			}
+			else if(idOp1 == 4){
+				approvalNobles -= .05;
+				approvalCommon += .1;
+			}
+		}
 		updateControls();
 }
 
@@ -469,6 +585,7 @@ function handleBtnEvt2() {
 			else if(idOp2 == 2){
 				//Commoner Opinion drop by 5$
 				approvalCommon -= .05;
+				outlayEvt += 10000000;
 			}
 			else if(idOp2 == 3){
 				//Commoner Opinion drop by 5$
@@ -476,7 +593,7 @@ function handleBtnEvt2() {
 			}
 			else if(idOp2 == 4){
 				//Neutral Option
-				outlayEvt -= 100000;
+				outlayEvt += 100000000;
 			}
 			else if(idOp2 == 5){
 				//Commoner Opinion go up by 5%
@@ -541,12 +658,13 @@ function handleBtnEvt2() {
 			else if(idOp2 == 2){
 				approvalNobles += .05;
 				approvalCommon -= .1;
+				outlayEvt += 30000000;
 				
 				var gold = Math.floor(Math.random() * 4);
 				if(gold > 1){
 					approvalNobles += .1;
 					approvalCommon += .2;
-					outlayEvt += 1000000000   
+					receiptEvt += 300000000;   
 				}
 				else{
 					approvalCommon -= .05;
@@ -596,6 +714,40 @@ function handleBtnEvt2() {
 			else if(idOp2 == 3){
 				approvalNobles -= .1;
 				approvalClergy += .1;
+			}
+		}
+		
+		else if(idEvt == 9){
+			if(idOp2 == 1){
+				approvalNobles += .05;
+				approvalCommon -= .05;
+			}
+			else if(idOp2 == 2){
+				//Neutral
+			}
+			else if(idOp2 == 3){
+				approvalNobles -= .05;
+				approvalCommon += .05;
+			}
+		}
+		
+		else if(idEvt == 10){
+			if(idOp2 == 1){
+				approvalNobles += .05;
+				approvalCommon += .05;
+				approvalClergy += .05;
+			}
+			else if(idOp2 == 2){
+				approvalNobles += .1;
+			}
+			else if(idOp2 == 3){
+				approvalNobles -= .05;
+				approvalCommon -= .05;
+				approvalClergy -= .05;
+			}
+			else if(idOp2 == 4){
+				approvalNobles -= .05;
+				approvalCommon += .1;
 			}
 		}
 		updateControls();
