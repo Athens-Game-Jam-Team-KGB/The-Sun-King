@@ -61,9 +61,9 @@ function init() {
 	
 	// Economic variables
 	loanCount        =       0;
-	incomeNobles     =    3000; // This is the average seasonal income (in livres) of a governer in France in the year 1700, per:  http://freepages.genealogy.rootsweb.ancestry.com/~unclefred/MONETARY.htm
-	incomeClergy     =     600; // This is the average seasonal income (in livres) of a mid-ranking official in France in the year 1700, per:  http://freepages.genealogy.rootsweb.ancestry.com/~unclefred/MONETARY.htm
-	incomeCommon     =     225; // This is the average seasonal income (in livres) of a half-skilled worker in France in the year 1700, per:  http://freepages.genealogy.rootsweb.ancestry.com/~unclefred/MONETARY.htm
+	incomeNobles     =    3000;   // This is the average seasonal income (in livres) of a governer in France in the year 1700, per:  http://freepages.genealogy.rootsweb.ancestry.com/~unclefred/MONETARY.htm
+	incomeClergy     =     487.5; // This is the average seasonal income (in livres) of a mid-ranking official in France in the year 1700, per:  http://freepages.genealogy.rootsweb.ancestry.com/~unclefred/MONETARY.htm
+	incomeCommon     =     225;   // This is the average seasonal income (in livres) of a half-skilled worker in France in the year 1700, per:  http://freepages.genealogy.rootsweb.ancestry.com/~unclefred/MONETARY.htm
 	netChange        =       0;
 	outlayCorrupt    =       0;
 	outlayEvt        =       0;
@@ -75,9 +75,9 @@ function init() {
 	taxAmtClergy     =       0;
 	taxAmtCommon     =       0;
 	taxAmtTotal      =       0;
-	taxRateNobles    =    0.10;
-	taxRateClergy    =    0.00;
-	taxRateCommon    =    0.10;
+	taxRateNobles    =       0.10;
+	taxRateClergy    =       0.00;
+	taxRateCommon    =       0.10;
 	treasuryCurrent  = 1000000;
 	treasuryFuture   = treasuryCurrent;
 	
@@ -108,6 +108,9 @@ function turn() {
 	treasuryCurrent = treasuryFuture;
 	outlayEvt = 0;
 	receiptEvt = 0;
+	incomeNobles+= 0.0;  // Average seasonal growth in income between 1700 and 1750, per:  http://freepages.genealogy.rootsweb.ancestry.com/~unclefred/MONETARY.htm
+	incomeClergy+= 2.25; // Average seasonal growth in income between 1700 and 1750, per:  http://freepages.genealogy.rootsweb.ancestry.com/~unclefred/MONETARY.htm
+	incomeCommon+= 1.5;  // Average seasonal growth in income between 1700 and 1750, per:  http://freepages.genealogy.rootsweb.ancestry.com/~unclefred/MONETARY.htm
 	updateEcon();
 	
 	// Update misc
