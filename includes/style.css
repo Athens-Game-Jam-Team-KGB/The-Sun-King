@@ -1,26 +1,26 @@
 /*   V A R I A B L E S   */
 *:root {
-	--bg-default: #FED;
-	--bg-dark:	#EDC;
-	--bg-link:	#FEE;
-	--bg-visited: #FDE;
-	--fg-default: #321;
-	--fg-link:	#322;
-	--fg-visited: #312;
+	--bg-default: #EEE;
+	--bg-dark:    #c09d31  /*https://en.wikipedia.org/wiki/Gold_%28color%29#Metallic_gold*/
+	--bg-link:    #0076c0; /*https://en.wikipedia.org/wiki/Azure_%28color%29#French_blue*/
+	--bg-visited: #c00372; /*https://en.wikipedia.org/wiki/Tyrian_purple*/
+	--fg-default: #403410  /*https://en.wikipedia.org/wiki/Gold_%28color%29#Metallic_gold*/
+	--fg-link:    #002740; /*https://en.wikipedia.org/wiki/Azure_%28color%29#French_blue*/
+	--fg-visited: #400126; /*https://en.wikipedia.org/wiki/Tyrian_purple*/
 	--font-sans:  sans-serif;
 	--font-serif: serif;
 	--font-mono:  monospace;
-	--indent:	  2em;
+	--indent:     2em;
 	--line-height: 1.5;
 	--pad-double: 32px;
 	--pad-double-neg: -32px;
-	--pad-full:   16px;
+	--pad-full:        16px;
 	--pad-full-neg:   -16px;
-	--pad-half:	   8px;
-	--pad-half-neg:	   -8px;
-	--pad-quarter: 4px;
+	--pad-half:         8px;
+	--pad-half-neg:    -8px;
+	--pad-quarter:      4px;
 	--pad-quarter-neg: -4px;
-	--shadow:	 #0004;
+	--shadow: #40341044;
 }
 
 /*   D E F A U L T S   */
