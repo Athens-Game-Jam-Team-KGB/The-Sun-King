@@ -94,9 +94,12 @@ function init() {
 	turn();
 }
 
-function turn() {
+function newTurn() {
 	playClick();
-	
+	turn();
+}
+
+function turn() {
 	// Update demographics
 	populationGrowth = 1.0019; // Between 1600 and 1801, per https://en.wikipedia.org/wiki/Demographics_of_France#Historical_population_figures
 	populationTotal *= populationGrowth; // https://en.wikipedia.org/wiki/List_of_countries_by_population_in_1700
