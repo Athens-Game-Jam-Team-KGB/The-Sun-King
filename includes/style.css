@@ -31,7 +31,7 @@
 	border-spacing: 0px;
 	box-sizing: border-box;
 	color: var(--fg-default);
-	font: 100% var(--font-sans);
+	font: 100% var(--font-serif);
 	line-height: var(--line-height);
 	margin: 0px;
 	overflow: auto;
