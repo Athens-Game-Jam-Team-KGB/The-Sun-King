@@ -65,10 +65,12 @@
 								<img width=16px height=16px src=resources/clergy.png alt=Clergy>
 								<input id=slideTaxRateClergy type=range min=0 max=100 step=1 value=10 onchange=handleSlideTaxRateClergy()>
 								&nbsp;<span id=spanTaxRateClergy>0</span>%
+								<tooltip>Tax rate for the clergy.</tooltip>
 							</li><li>
 								<img width=16px height=16px src=resources/common.png alt=Commoners>
 								<input id=slideTaxRateCommon type=range min=0 max=100 step=1 value=10 onchange=handleSlideTaxRateCommon()>
 								&nbsp;<span id=spanTaxRateCommon>10</span>%
+								<tooltip>Tax rate for the commoners.</tooltip>
 							</li>
 							<li><h3><u>Finance</u></h3></li>
 							<li>Current loans:  <span loansCurrent>0</span></li>
@@ -89,14 +91,17 @@
 								<td><img width=16px height=16px src=resources/nobles.png alt=Nobility></td>
 								<!--<td>&nbsp;Nobility:</td>-->
 								<td>&nbsp;<span id=spanApprovalNobles>50</span>%&nbsp;Approval</td>
+								<tooltip>Your approval rate among the nobility.</tooltip>
 							</tr><tr>
 								<td><img width=16px height=16px src=resources/clergy.png alt=Clergy></td>
 								<!--<td>&nbsp;Clergy:</td>-->
 								<td>&nbsp;<span id=spanApprovalClergy>50</span>%&nbsp;Approval</td>
+								<tooltip>Your approval rate among the clergy.</tooltip>
 							</tr><tr>
 								<td><img width=16px height=16px src=resources/common.png alt=Commoners></td>
 								<!--<td>&nbsp;Commoners:</td>-->
 								<td>&nbsp;<span id=spanApprovalCommon>50</span>%&nbsp;Approval</td>
+								<tooltip>Your approval rate among the commoners.</tooltip>
 							</tr>
 						</table>
 					</div></td></tr>
