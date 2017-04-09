@@ -2,6 +2,7 @@
 // Slider handlers
 
 function handleSlideTaxRateNobles() {
+	playClick();
 	var newRate = document.getElementById("slideTaxRateNobles").value / 100;
 	approvalNobles-= newRate - taxRateNobles;
 	taxRateNobles = newRate;
@@ -10,6 +11,7 @@ function handleSlideTaxRateNobles() {
 }
 
 function handleSlideTaxRateClergy() {
+	playClick();
 	var newRate = document.getElementById("slideTaxRateClergy").value / 100;
 	approvalClergy-= 2 * (newRate - taxRateClergy);
 	taxRateClergy = newRate;
@@ -18,6 +20,7 @@ function handleSlideTaxRateClergy() {
 }
 
 function handleSlideTaxRateCommon() {
+	playClick();
 	var newRate = document.getElementById("slideTaxRateCommon").value / 100;
 	approvalCommon-= newRate - taxRateCommon;
 	taxRateCommon = newRate;
@@ -29,6 +32,7 @@ function handleSlideTaxRateCommon() {
 // Loans
 
 function loanTake() {
+	playClick();
 	treasuryCurrent+= loanAmt;
 	loanCount++;
 	updateEcon();
@@ -36,6 +40,7 @@ function loanTake() {
 }
 
 function loanRepay() {
+	playClick();
 	treasuryCurrent-= loanAmt * (1 + loanInterestRate);
 	loanCount--;
 	updateEcon();
