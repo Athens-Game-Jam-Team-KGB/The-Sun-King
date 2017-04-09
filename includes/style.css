@@ -120,7 +120,7 @@ h4 h5 h6 {
 	font-weight: bold;
 }
 hr {
-	border-width: 1px solid var(--fg-default);
+	border: 1px solid var(--fg-default);
 	display: block;
 	margin-top: var(--pad-quarter);
 	margin-bottom: var(--pad-quarter);
