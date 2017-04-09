@@ -4,7 +4,7 @@ var   approvalCommon;
 var   approvalNobles;
 
 // Event variables
-const countEvt = 6;
+const countEvt = 12;
 var   idEvt;
 var   idOp1;
 var   idOp2;
@@ -44,9 +44,9 @@ var   outlayInterestTotal;
 
 function init() {
 	// Parliamentary variables
+	approvalNobles  = 0.67;
 	approvalClergy  = 0.50;
-	approvalCommon  = 0.50;
-	approvalNobles  = 0.50;
+	approvalCommon  = 0.33;
 	
 	// Event variables
 	idEvt = 0;
