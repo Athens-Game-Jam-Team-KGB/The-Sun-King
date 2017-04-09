@@ -191,7 +191,7 @@ function updateEcon() {
 	treasuryFuture = treasuryCurrent + netChange;
 }
 
-function playAudio() {
+function playMusic() {
 	music = new Audio("resources/Jean-Philippe_Rameau_-_Gavotte_and_Variations.ogg");
 	music.loop = true;
 	music.play();
