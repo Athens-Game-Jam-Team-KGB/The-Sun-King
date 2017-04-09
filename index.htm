@@ -33,21 +33,44 @@
 						<button id=btnInit class=button onclick=init()>New Game</button>
 					</span>
 				</div>
-			</td></tr><tr><td class=pad-bottom>
-				<table class=mar-left>
-					<tr><td class=pad-top><div class="card mar-right" style=width:512px>
-						<h2>
-							<img width=24 height=24 src=resources/event.png>&nbsp;
-							Event
-						</h2>
-						<ul>
-							<li id=evtTxt>Event text goes here.</li>
-							<ul id=ulBtnEvt>
-								<li><button id=btnEvt1 class=button onclick=handleBtnEvt1()>Option1</button></li>
-								<li><button id=btnEvt2 class=button onclick=handleBtnEvt2()>Option2</button></li>
-							</ul>
-							<li id=liEvtOpt><br><b>Option&nbsp;selected:</b> <span id=spanEvtOpt>N/A</span></li>
+			</td></tr><tr><td class=pad-top colspan=2>
+				<div class="card mar-right" style=width:1024px>
+					<h2>
+						<img width=24 height=24 src=resources/event.png>&nbsp;
+						Event
+					</h2>
+					<ul>
+						<li id=evtTxt>Event text goes here.</li>
+						<ul id=ulBtnEvt>
+							<li><button id=btnEvt1 class=button onclick=handleBtnEvt1()>Option1</button></li>
+							<li><button id=btnEvt2 class=button onclick=handleBtnEvt2()>Option2</button></li>
 						</ul>
+						<li id=liEvtOpt><br><b>Option&nbsp;selected:</b> <span id=spanEvtOpt>N/A</span></li>
+					</ul>
+				</div>
+			</td></tr>
+			<tr><td class=pad-ver>
+				<table class=mar-left>
+					<tr><td class=pad-top><div class="card mar-right">
+						<h2>
+							<img width=24 height=24 src=resources/parliament.png>&nbsp;
+							Parliament
+						</h2>
+						<table>
+							<tr>
+								<td><img width=16px height=16px src=resources/nobles.png alt=Nobility></td>
+								<td>&nbsp;<span id=spanApprovalNobles>67</span>%&nbsp;Approval</td>
+								<tooltip>Your approval rate among the nobility.</tooltip>
+							</tr><tr>
+								<td><img width=16px height=16px src=resources/clergy.png alt=Clergy></td>
+								<td>&nbsp;<span id=spanApprovalClergy>50</span>%&nbsp;Approval</td>
+								<tooltip>Your approval rate among the clergy.</tooltip>
+							</tr><tr>
+								<td><img width=16px height=16px src=resources/common.png alt=Commoners></td>
+								<td>&nbsp;<span id=spanApprovalCommon>33</span>%&nbsp;Approval</td>
+								<tooltip>Your approval rate among the commoners.</tooltip>
+							</tr>
+						</table>
 					</div></td></tr>
 					<tr><td class=pad-top><div class="card mar-right">
 						<h2>
@@ -82,27 +105,6 @@
 						</ul>
 					</div></td></tr>
 				</table></td><td><table>
-					<tr><td class=pad-top><div class="card mar-right">
-						<h2>
-							<img width=24 height=24 src=resources/parliament.png>&nbsp;
-							Parliament
-						</h2>
-						<table>
-							<tr>
-								<td><img width=16px height=16px src=resources/nobles.png alt=Nobility></td>
-								<td>&nbsp;<span id=spanApprovalNobles>67</span>%&nbsp;Approval</td>
-								<tooltip>Your approval rate among the nobility.</tooltip>
-							</tr><tr>
-								<td><img width=16px height=16px src=resources/clergy.png alt=Clergy></td>
-								<td>&nbsp;<span id=spanApprovalClergy>50</span>%&nbsp;Approval</td>
-								<tooltip>Your approval rate among the clergy.</tooltip>
-							</tr><tr>
-								<td><img width=16px height=16px src=resources/common.png alt=Commoners></td>
-								<td>&nbsp;<span id=spanApprovalCommon>33</span>%&nbsp;Approval</td>
-								<tooltip>Your approval rate among the commoners.</tooltip>
-							</tr>
-						</table>
-					</div></td></tr>
 					<tr><td class=pad-top><div class="card mar-right">
 						<h2>
 							<img width=24 height=24 src=resources/accounting.png>&nbsp;
