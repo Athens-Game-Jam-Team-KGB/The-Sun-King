@@ -1,7 +1,7 @@
 /*   V A R I A B L E S   */
 *:root {
-	--bg-default: #e0d2a9ff; /*https://en.wikipedia.org/wiki/Gold_%28color%29#Metallic_gold*/;
-	--bg-dark:    #c09d31c0; /*https://en.wikipedia.org/wiki/Gold_%28color%29#Metallic_gold*/
+	--bg-default: #e0d2a9c0; /*https://en.wikipedia.org/wiki/Gold_%28color%29#Metallic_gold*/;
+	--bg-dark:    #c09d31ff; /*https://en.wikipedia.org/wiki/Gold_%28color%29#Metallic_gold*/
 	--bg-link:    #0076c0ff; /*https://en.wikipedia.org/wiki/Azure_%28color%29#French_blue*/
 	--bg-visited: #c00372ff; /*https://en.wikipedia.org/wiki/Tyrian_purple*/
 	--fg-default: #403410ff; /*https://en.wikipedia.org/wiki/Gold_%28color%29#Metallic_gold*/
