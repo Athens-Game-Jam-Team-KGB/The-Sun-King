@@ -15,7 +15,7 @@ Description
 | Our entry for Athens Game Jam 2017.  The topic was "bureaucracy".  We decided
   to make a web-game based loosely on the enlightened monarchy of
   pre-revolutionary France.
-music link: https://en.wikipedia.org/wiki/File:Jean-Philippe_Rameau_-_Gavotte_and_Variations.ogg#file
+
 Authors
 --------------------------------------------------------------------------------
 + Miles B Huff
@@ -27,11 +27,15 @@ Licenses
 --------------------------------------------------------------------------------
 + All code is under the LGPL3 (see "/License.txt").
 + All text is under CC-BY-SA-4 (see "https://creativecommons.org/licenses/by-sa/4.0/legalcode").
-+ All music is too old to be copyrighted.
+
++ The audio copyrights and sources are as follows:
+  
+  + resources/music.ogg (CC-BY-SA-2) (https://commons.wikimedia.org/wiki/File:Jean-Philippe_Rameau_-_Gavotte_and_Variations.ogg)
+
 + The art copyrights and sources are as follows:
-    
-    + resources/background.jpg (No Copyright) (https://commons.wikimedia.org/wiki/File:Chateau_de_Versailles_1668_Pierre_Patel.jpg)
-    + resources/clergy.png (CC-BY-SA-4) (self-made)
-    + resources/common.png (CC-BY-SA-3) (https://commons.wikimedia.org/wiki/File:Tricolour_Cockade.svg)
-    + resources/gameover.png (No Copyright) (https://commons.wikimedia.org/wiki/File:Hinrichtung_Ludwig_des_XVI.png)
-    + resourecs/nobles.png (CC-BY-SA-3) (source:  https://commons.wikimedia.org/wiki/File:Royal_Monogram_of_King_Louis_XIV_of_France.svg)
+  
+  + resources/background.jpg (No Copyright) (https://commons.wikimedia.org/wiki/File:Estatesgeneral.jpg)
+  + resources/clergy.png (CC-BY-SA-4) (self-made)
+  + resources/common.png (CC-BY-SA-3) (https://commons.wikimedia.org/wiki/File:Tricolour_Cockade.svg)
+  + resources/gameover.png (No Copyright) (https://commons.wikimedia.org/wiki/File:Hinrichtung_Ludwig_des_XVI.png)
+  + resourecs/nobles.png (CC-BY-SA-3) (source:  https://commons.wikimedia.org/wiki/File:Royal_Monogram_of_King_Louis_XIV_of_France.svg)
