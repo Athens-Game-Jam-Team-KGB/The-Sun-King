@@ -9,7 +9,7 @@
 		<script type=text/javascript src=includes/events.js></script>
 		<script type=text/javascript src=includes/actions.js></script>
 	</head>
-	<body class=body onload=init()>
+	<body class=body>
 		<div id=divHelp class="card mar-full" style=display:none>
 			<h2>Helptext</h2>
 			<p>The helptext goes here.</p>
@@ -22,7 +22,10 @@
 		<table id=divGame class=centered>
 			<tr><td class=pad-top colspan=2>
 				<div class="card mar-hor">
-					<h1 class=float-left>The&nbsp;Sun&nbsp;King</h1>
+					<h1 class=float-left>
+						<img width=48 height=48 src=resources/coa.png>&nbsp;
+						The&nbsp;Sun&nbsp;King
+					</h1>
 					<span class=float-right>
 						<button id=btnTurn class=button onclick=turn() style=display:none>Next&nbsp;Turn</button>
 						<button id=btnGame class=button onclick=game()>Return to Game</button>
@@ -47,7 +50,7 @@
 						<h2>Policies &amp; Actions</h2>
 						<ul>
 							<li>Policies go here.</li>
-							<li><h3>Taxes</h3></li>
+							<li><h3 class=float-left>Taxes</h3><img class=float-right width=32 height=32 src=resources/pna.png></li>
 							<li>
 								<img width=24px height=24px src=resources/nobles.png alt=Nobility>
 								<input id=slideTaxRateNobles type=range min=0 max=100 step=1 value=10 onchange=handleSlideTaxRateNobles()>
@@ -144,5 +147,9 @@
 				</table>
 			</td></tr>
 		</table>
+		<script>
+			init();
+			playMusic();
+		</script>
 	</body>
 </html>
